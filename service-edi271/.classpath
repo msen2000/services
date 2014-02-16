@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src/main/java"/>
+	<classpathentry kind="src" path="target/generated-sources/xjc"/>
+	<classpathentry kind="src" path="src/main/resources"/>
+	<classpathentry kind="src" output="target/test-classes" path="src/test/java"/>
+	<classpathentry kind="src" output="target/test-classes" path="src/test/resources"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.maven.ide.eclipse.MAVEN2_CLASSPATH_CONTAINER"/>
+	<classpathentry kind="var" path="XERoot"/>
+	<classpathentry kind="var" path="XERoot/lib/concurrent.jar"/>
+	<classpathentry kind="var" path="XERoot/lib/eccl.jar"/>
+	<classpathentry kind="var" path="XERoot/lib/ecjaction.jar"/>
+	<classpathentry kind="var" path="XERoot/lib/EdifecsStartup.jar"/>
+	<classpathentry kind="var" path="XERoot/lib/jaction.jar"/>
+	<classpathentry kind="var" path="XERoot/lib/jactiontest.jar"/>
+	<classpathentry kind="var" path="XERoot/lib/jaextensions.jar"/>
+	<classpathentry kind="var" path="XERoot/lib/xe_extensions.jar"/>
+	<classpathentry kind="var" path="XERoot/lib/xe_samples.jar"/>
+	<classpathentry kind="var" path="XERoot/lib/xe_selector.jar"/>
+	<classpathentry kind="var" path="XERoot/lib/xe_ser.jar"/>
+	<classpathentry kind="var" path="XERoot/lib/xe_solutions.jar"/>
+	<classpathentry kind="var" path="XERoot/lib/xe_tests.jar"/>
+	<classpathentry kind="var" path="XERoot/lib/xengine.jar"/>
+	<classpathentry kind="var" path="XERoot/lib/xercesImpl.jar"/>
+	<classpathentry kind="var" path="XERoot/lib/xml-apis.jar"/>
+	<classpathentry kind="output" path="target/classes"/>
+</classpath>
