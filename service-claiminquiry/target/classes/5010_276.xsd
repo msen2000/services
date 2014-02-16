@@ -1,0 +1,2415 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.delta.org/b2b/edi/t276" xmlns="http://www.delta.org/b2b/edi/t276" elementFormDefault="qualified">
+	<xsd:annotation>
+		<xsd:appinfo>
+			<FileName>C:\Senthil\02 PROJECTS\EDI\276_277\5010_276.ecs</FileName>
+			<InternalID>{D14C2C62-0767-4F8C-A75B-2B61A1087482}</InternalID>
+		</xsd:appinfo>
+	</xsd:annotation>
+	<xsd:element name="T-276">	
+		<xsd:complexType>
+			<xsd:annotation>
+				<xsd:documentation>This X12 Transaction Set contains the format and establishes the data contents of the Health Care Claim Status Request Transaction Set (276) for use within the context of an Electronic Data Interchange (EDI) environment. This transaction set can be used by a provider, recipient of health care products or services, or their authorized agent to request the status of a health care claim or encounter from a health care payer. This transaction set is not intended to replace the Health Care Claim Transaction Set (837), but rather to occur after the receipt of a claim or encounter information. The request may occur at the summary or service line detail level. </xsd:documentation>
+				<xsd:appinfo>
+					<UNMKey>Abbreviated|CodeList|-&lt;Parent Node ID&gt;.&lt;Index&gt;|Composite|-&lt;Node ID&gt;-&lt;Node Name&gt;|Element|-&lt;Segment ID&gt;&lt;Node Position&gt;-&lt;Node Name&gt;|Loop|-&lt;Node ID&gt;|Segment|-&lt;Node ID&gt;-&lt;Node Name&gt;|Transaction|-&lt;Node ID&gt;|ReplacementCharacter|_|InternalSeparator|-</UNMKey>
+				</xsd:appinfo>
+			</xsd:annotation>
+			<xsd:sequence>
+				<xsd:element name="Internal-Properties" type="Internal-Properties" minOccurs="0"/>
+				<xsd:element name="S-ISA-Interchange_Control_Header" type="S-ISA-Interchange_Control_Header"/>
+				<xsd:element name="S-GS-Functional_Group_Header" type="S-GS-Functional_Group_Header"/>
+				<xsd:element name="S-ST-Transaction_Set_Header" type="S-ST-Transaction_Set_Header"/>
+				<xsd:element name="S-BHT-Beginning_of_Hierarchical_Transaction" type="S-BHT-Beginning_of_Hierarchical_Transaction"/>
+				<xsd:choice maxOccurs="unbounded" minOccurs="4">
+					<xsd:element name="L-2000A" type="L-2000A" maxOccurs="unbounded"/>
+					<xsd:element name="L-2000B" type="L-2000B" maxOccurs="unbounded"/>
+					<xsd:element name="L-2000C" type="L-2000C" maxOccurs="unbounded"/>
+					<xsd:element name="L-2000D" type="L-2000D" maxOccurs="unbounded"/>
+					<xsd:element name="L-2000E" type="L-2000E" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+				</xsd:choice>
+				<xsd:element name="S-SE-Transaction_Set_Trailer" type="S-SE-Transaction_Set_Trailer"/>
+				<xsd:element name="S-GE-Functional_Group_Trailer" type="S-GE-Functional_Group_Trailer"/>
+				<xsd:element name="S-IEA-Interchange_Control_Trailer" type="S-IEA-Interchange_Control_Trailer"/>
+			</xsd:sequence>
+			<xsd:attribute name="Type" default="Transaction" type="xsd:string"/>
+			<xsd:attribute name="ID" default="276" type="xsd:string"/>
+			<xsd:attribute name="Name" default="Health Care Claim Status Request" type="xsd:string"/>
+			<xsd:attribute name="XDataVersion" fixed="2.0" type="xsd:string"/>
+			<xsd:attribute name="Standard" fixed="HIPAA" use="required" type="xsd:string"/>
+			<xsd:attribute name="Version" default="V5010X212" type="xsd:string"/>
+			<xsd:attribute name="GUID" type="GUID"/>
+			<xsd:attribute name="CreatedBy" type="xsd:string"/>
+			<xsd:attribute name="CreatedDate" type="xsd:dateTime"/>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:simpleType name="GUID">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="\{[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}\}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="EDI-Element-String-Type">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attribute name="Type" default="Element" type="xsd:string"/>
+				<xsd:attribute name="EDIDataType" type="xsd:string"/>
+				<xsd:attribute name="Macro" type="xsd:string" use="optional"/>
+				<xsd:attribute name="ApplicationInfo" type="xsd:string"/>
+				<xsd:attribute name="ID" type="xsd:string"/>
+				<xsd:attribute name="Name" type="xsd:string"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="EDI-Element-Integer-Type">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:integer">
+				<xsd:attribute name="Type" default="Element" type="xsd:string"/>
+				<xsd:attribute name="EDIDataType" type="xsd:string"/>
+				<xsd:attribute name="Macro" type="xsd:string" use="optional"/>
+				<xsd:attribute name="ApplicationInfo" type="xsd:string"/>
+				<xsd:attribute name="ID" type="xsd:string"/>
+				<xsd:attribute name="Name" type="xsd:string"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="EDI-Element-Decimal-Type">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:decimal">
+				<xsd:attribute name="Type" default="Element" type="xsd:string"/>
+				<xsd:attribute name="EDIDataType" type="xsd:string"/>
+				<xsd:attribute name="Macro" type="xsd:string" use="optional"/>
+				<xsd:attribute name="ApplicationInfo" type="xsd:string"/>
+				<xsd:attribute name="ID" type="xsd:string"/>
+				<xsd:attribute name="Name" type="xsd:string"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="EDI-Element-hexBinary-Type">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:hexBinary">
+				<xsd:attribute name="Type" default="Element" type="xsd:string"/>
+				<xsd:attribute name="EDIDataType" type="xsd:string"/>
+				<xsd:attribute name="Macro" type="xsd:string" use="optional"/>
+				<xsd:attribute name="ApplicationInfo" type="xsd:string"/>
+				<xsd:attribute name="ID" type="xsd:string"/>
+				<xsd:attribute name="Name" type="xsd:string"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="EDI-Element-base64Binary-Type">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:base64Binary">
+				<xsd:attribute name="Type" default="Element" type="xsd:string"/>
+				<xsd:attribute name="EDIDataType" type="xsd:string"/>
+				<xsd:attribute name="Macro" type="xsd:string" use="optional"/>
+				<xsd:attribute name="ApplicationInfo" type="xsd:string"/>
+				<xsd:attribute name="ID" type="xsd:string"/>
+				<xsd:attribute name="Name" type="xsd:string"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="EDI-Element-Any-Type">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attribute name="Type" default="Element" type="xsd:string"/>
+				<xsd:attribute name="EDIDataType" type="xsd:string"/>
+				<xsd:attribute name="Macro" type="xsd:string" use="optional"/>
+				<xsd:attribute name="ApplicationInfo" type="xsd:string"/>
+				<xsd:attribute name="ID" type="xsd:string"/>
+				<xsd:attribute name="Name" type="xsd:string"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="Internal-Properties">
+		<xsd:sequence>
+			<xsd:element name="Data-Structure" type="Data-Structure" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="Data-Structure">
+		<xsd:sequence>
+			<xsd:element name="Lookup" type="Lookup" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="Property" type="Property" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="Data-Structure" type="Data-Structure" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+		<xsd:attribute name="Name" type="xsd:string"/>
+		<xsd:attribute name="GUID" type="GUID"/>
+	</xsd:complexType>
+	<xsd:complexType name="Lookup">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attribute name="Name" type="xsd:string"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="Property">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attribute name="Name" type="xsd:string"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="S-ISA-Interchange_Control_Header">
+		<xsd:annotation>
+			<xsd:documentation>To start and identify an interchange of zero or more functional groups and interchange-related control segments</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="E-ISA01-Authorization_Information_Qualifier" type="E-ISA01-Authorization_Information_Qualifier"/>
+			<xsd:element name="E-ISA02-Authorization_Information" type="E-ISA02-Authorization_Information"/>
+			<xsd:element name="E-ISA03-Security_Information_Qualifier" type="E-ISA03-Security_Information_Qualifier"/>
+			<xsd:element name="E-ISA04-Security_Information" type="E-ISA04-Security_Information"/>
+			<xsd:element name="E-ISA05-Interchange_ID_Qualifier" type="E-ISA05-Interchange_ID_Qualifier"/>
+			<xsd:element name="E-ISA06-Interchange_Sender_ID" type="E-ISA06-Interchange_Sender_ID"/>
+			<xsd:element name="E-ISA07-Interchange_ID_Qualifier" type="E-ISA07-Interchange_ID_Qualifier"/>
+			<xsd:element name="E-ISA08-Interchange_Receiver_ID" type="E-ISA08-Interchange_Receiver_ID"/>
+			<xsd:element name="E-ISA09-Interchange_Date" type="E-ISA09-Interchange_Date"/>
+			<xsd:element name="E-ISA10-Interchange_Time" type="E-ISA10-Interchange_Time"/>
+			<xsd:element name="E-ISA11-Repetition_Separator" type="E-ISA11-Repetition_Separator"/>
+			<xsd:element name="E-ISA12-Interchange_Control_Version_Number" type="E-ISA12-Interchange_Control_Version_Number"/>
+			<xsd:element name="E-ISA13-Interchange_Control_Number" type="E-ISA13-Interchange_Control_Number"/>
+			<xsd:element name="E-ISA14-Acknowledgment_Requested" type="E-ISA14-Acknowledgment_Requested"/>
+			<xsd:element name="E-ISA15-Interchange_Usage_Indicator" type="E-ISA15-Interchange_Usage_Indicator"/>
+			<xsd:element name="E-ISA16-Component_Element_Separator" type="E-ISA16-Component_Element_Separator"/>
+		</xsd:sequence>
+		<xsd:attribute name="Type" default="Segment" type="xsd:string"/>
+		<xsd:attribute name="ID" default="ISA" type="xsd:string"/>
+		<xsd:attribute name="Name" default="Interchange Control Header" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="E-ISA01-Authorization_Information_Qualifier">
+		<xsd:annotation>
+			<xsd:documentation>Code identifying the type of information in the Authorization Information</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-String-Type">
+				<xsd:enumeration value="00"/>
+				<xsd:enumeration value="03"/>
+				<xsd:attribute name="EDIDataType" fixed="ID" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="I01" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Authorization Information Qualifier" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="E-ISA02-Authorization_Information">
+		<xsd:annotation>
+			<xsd:documentation>Information used for additional identification or authorization of the interchange sender or the data in the interchange; the type of information is set by the Authorization Information Qualifier (I01)</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-String-Type">
+				<xsd:minLength value="10"/>
+				<xsd:maxLength value="10"/>
+				<xsd:attribute name="EDIDataType" fixed="AN" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="I02" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Authorization Information" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="E-ISA03-Security_Information_Qualifier">
+		<xsd:annotation>
+			<xsd:documentation>Code identifying the type of information in the Security Information</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-String-Type">
+				<xsd:enumeration value="00"/>
+				<xsd:enumeration value="01"/>
+				<xsd:attribute name="EDIDataType" fixed="ID" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="I03" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Security Information Qualifier" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="E-ISA04-Security_Information">
+		<xsd:annotation>
+			<xsd:documentation>This is used for identifying the security information about the interchange sender or the data in the interchange; the type of information is set by the Security Information Qualifier (I03)</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-String-Type">
+				<xsd:minLength value="10"/>
+				<xsd:maxLength value="10"/>
+				<xsd:attribute name="EDIDataType" fixed="AN" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="I04" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Security Information" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="E-ISA05-Interchange_ID_Qualifier">
+		<xsd:annotation>
+			<xsd:documentation>Code indicating the system/method of code structure used to designate the sender or receiver ID element being qualified</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-String-Type">
+				<xsd:enumeration value="01"/>
+				<xsd:enumeration value="14"/>
+				<xsd:enumeration value="20"/>
+				<xsd:enumeration value="27"/>
+				<xsd:enumeration value="28"/>
+				<xsd:enumeration value="29"/>
+				<xsd:enumeration value="30"/>
+				<xsd:enumeration value="33"/>
+				<xsd:enumeration value="ZZ"/>
+				<xsd:attribute name="EDIDataType" fixed="ID" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="I05" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Interchange ID Qualifier" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="E-ISA06-Interchange_Sender_ID">
+		<xsd:annotation>
+			<xsd:documentation>Identification code published by the sender for other parties to use as the receiver ID to route data to them; the sender always codes this value in the sender ID element</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-String-Type">
+				<xsd:minLength value="15"/>
+				<xsd:maxLength value="15"/>
+				<xsd:attribute name="EDIDataType" fixed="AN" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="I06" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Interchange Sender ID" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="E-ISA07-Interchange_ID_Qualifier">
+		<xsd:annotation>
+			<xsd:documentation>Code indicating the system/method of code structure used to designate the sender or receiver ID element being qualified</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-String-Type">
+				<xsd:enumeration value="01"/>
+				<xsd:enumeration value="14"/>
+				<xsd:enumeration value="20"/>
+				<xsd:enumeration value="27"/>
+				<xsd:enumeration value="28"/>
+				<xsd:enumeration value="29"/>
+				<xsd:enumeration value="30"/>
+				<xsd:enumeration value="33"/>
+				<xsd:enumeration value="ZZ"/>
+				<xsd:attribute name="EDIDataType" fixed="ID" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="I05" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Interchange ID Qualifier" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="E-ISA08-Interchange_Receiver_ID">
+		<xsd:annotation>
+			<xsd:documentation>Identification code published by the receiver of the data; When sending, it is used by the sender as their sending ID, thus other parties sending to them will use this as a receiving ID to route data to them</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-String-Type">
+				<xsd:minLength value="15"/>
+				<xsd:maxLength value="15"/>
+				<xsd:attribute name="EDIDataType" fixed="AN" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="I07" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Interchange Receiver ID" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="E-ISA09-Interchange_Date">
+		<xsd:annotation>
+			<xsd:documentation>Date of the interchange</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-String-Type">
+				<xsd:minLength value="6"/>
+				<xsd:maxLength value="6"/>
+				<xsd:attribute name="EDIDataType" fixed="DT" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="I08" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Interchange Date" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="E-ISA10-Interchange_Time">
+		<xsd:annotation>
+			<xsd:documentation>Time of the interchange</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-String-Type">
+				<xsd:minLength value="4"/>
+				<xsd:maxLength value="4"/>
+				<xsd:attribute name="EDIDataType" fixed="TM" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="I09" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Interchange Time" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="E-ISA11-Repetition_Separator">
+		<xsd:annotation>
+			<xsd:documentation>Type is not applicable; the repetition separator is a delimiter and not a data element; this field provides the delimiter used to separate repeated occurrences of a simple data element or a composite data structure; this value must be different than the data element separator, component element separator, and the segment terminator</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-Any-Type">
+				<xsd:attribute name="EDIDataType" fixed="" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="I65" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Repetition Separator" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="E-ISA12-Interchange_Control_Version_Number">
+		<xsd:annotation>
+			<xsd:documentation>Code specifying the version number of the interchange control segments</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-String-Type">
+				<xsd:enumeration value="00501"/>
+				<xsd:attribute name="EDIDataType" fixed="ID" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="I11" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Interchange Control Version Number" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="E-ISA13-Interchange_Control_Number">
+		<xsd:annotation>
+			<xsd:documentation>A control number assigned by the interchange sender</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-Integer-Type">
+				<xsd:attribute name="EDIDataType" fixed="N0" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="I12" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Interchange Control Number" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="E-ISA14-Acknowledgment_Requested">
+		<xsd:annotation>
+			<xsd:documentation>Code indicating sender's request for an interchange acknowledgment</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-String-Type">
+				<xsd:enumeration value="0"/>
+				<xsd:enumeration value="1"/>
+				<xsd:attribute name="EDIDataType" fixed="ID" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="I13" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Acknowledgment Requested" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="E-ISA15-Interchange_Usage_Indicator">
+		<xsd:annotation>
+			<xsd:documentation>Code indicating whether data enclosed by this interchange envelope is test, production or information</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-String-Type">
+				<xsd:enumeration value="P"/>
+				<xsd:enumeration value="T"/>
+				<xsd:attribute name="EDIDataType" fixed="ID" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="I14" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Interchange Usage Indicator" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="E-ISA16-Component_Element_Separator">
+		<xsd:annotation>
+			<xsd:documentation>Type is not applicable; the component element separator is a delimiter and not a data element; this field provides the delimiter used to separate component data elements within a composite data structure; this value must be different than the data element separator and the segment terminator</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-Any-Type">
+				<xsd:attribute name="EDIDataType" fixed="" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="I15" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Component Element Separator" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="S-GS-Functional_Group_Header">
+		<xsd:annotation>
+			<xsd:documentation>To indicate the beginning of a functional group and to provide control information</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="E-GS01-Functional_Identifier_Code" type="E-GS01-Functional_Identifier_Code"/>
+			<xsd:element name="E-GS02-Application_Sender_s_Code" type="E-GS02-Application_Sender_s_Code"/>
+			<xsd:element name="E-GS03-Application_Receiver_s_Code" type="E-GS03-Application_Receiver_s_Code"/>
+			<xsd:element name="E-GS04-Date" type="E-GS04-Date"/>
+			<xsd:element name="E-GS05-Time" type="E-GS05-Time"/>
+			<xsd:element name="E-GS06-Group_Control_Number" type="E-GS06-Group_Control_Number"/>
+			<xsd:element name="E-GS07-Responsible_Agency_Code" type="E-GS07-Responsible_Agency_Code"/>
+			<xsd:element name="E-GS08-Version___Release___Industry_Identifier_Code" type="E-GS08-Version___Release___Industry_Identifier_Code"/>
+		</xsd:sequence>
+		<xsd:attribute name="Type" default="Segment" type="xsd:string"/>
+		<xsd:attribute name="ID" default="GS" type="xsd:string"/>
+		<xsd:attribute name="Name" default="Functional Group Header" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="E-GS01-Functional_Identifier_Code">
+		<xsd:annotation>
+			<xsd:documentation>Code identifying a group of application related transaction sets</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-String-Type">
+				<xsd:enumeration value="HR"/>
+				<xsd:attribute name="EDIDataType" fixed="ID" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="479" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Functional Identifier Code" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="E-GS02-Application_Sender_s_Code">
+		<xsd:annotation>
+			<xsd:documentation>Code identifying party sending transmission; codes agreed to by trading partners</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-String-Type">
+				<xsd:minLength value="2"/>
+				<xsd:maxLength value="15"/>
+				<xsd:attribute name="EDIDataType" fixed="AN" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="142" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Application Sender's Code" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="E-GS03-Application_Receiver_s_Code">
+		<xsd:annotation>
+			<xsd:documentation>Code identifying party receiving transmission; codes agreed to by trading partners</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-String-Type">
+				<xsd:minLength value="2"/>
+				<xsd:maxLength value="15"/>
+				<xsd:attribute name="EDIDataType" fixed="AN" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="124" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Application Receiver's Code" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="E-GS04-Date">
+		<xsd:annotation>
+			<xsd:documentation>Date expressed as CCYYMMDD where CC represents the first two digits of the calendar year</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-String-Type">
+				<xsd:minLength value="8"/>
+				<xsd:maxLength value="8"/>
+				<xsd:attribute name="EDIDataType" fixed="DT" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="373" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Date" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="E-GS05-Time">
+		<xsd:annotation>
+			<xsd:documentation>Time expressed in 24-hour clock time as follows: HHMM, or HHMMSS, or HHMMSSD, or HHMMSSDD, where H = hours (00-23), M = minutes (00-59), S = integer seconds (00-59) and DD = decimal seconds; decimal seconds are expressed as follows: D = tenths (0-9) and DD = hundredths (00-99)</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-String-Type">
+				<xsd:minLength value="4"/>
+				<xsd:maxLength value="8"/>
+				<xsd:attribute name="EDIDataType" fixed="TM" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="337" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Time" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="E-GS06-Group_Control_Number">
+		<xsd:annotation>
+			<xsd:documentation>Assigned number originated and maintained by the sender</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-Integer-Type">
+				<xsd:attribute name="EDIDataType" fixed="N0" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="28" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Group Control Number" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="E-GS07-Responsible_Agency_Code">
+		<xsd:annotation>
+			<xsd:documentation>Code identifying the issuer of the standard; this code is used in conjunction with Data Element 480</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-String-Type">
+				<xsd:enumeration value="X"/>
+				<xsd:attribute name="EDIDataType" fixed="ID" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="455" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Responsible Agency Code" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="E-GS08-Version___Release___Industry_Identifier_Code">
+		<xsd:annotation>
+			<xsd:documentation>Code indicating the version, release, subrelease, and industry identifier of the EDI standard being used, including the GS and GE segments; if code in DE455 in GS segment is X, then in DE 480 positions 1-3 are the version number; positions 4-6 are the release and subrelease, level of the version; and positions 7-12 are the industry or trade association identifiers (optionally assigned by user); if code in DE455 in GS segment is T, then other formats are allowed</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-String-Type">
+				<xsd:enumeration value="005010X212"/>
+				<xsd:attribute name="EDIDataType" fixed="AN" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="480" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Version / Release / Industry Identifier Code" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="S-ST-Transaction_Set_Header">
+		<xsd:annotation>
+			<xsd:documentation>To indicate the start of a transaction set and to assign a control number</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="E-ST01-Transaction_Set_Identifier_Code" type="E-ST01-Transaction_Set_Identifier_Code"/>
+			<xsd:element name="E-ST02-Transaction_Set_Control_Number" type="E-ST02-Transaction_Set_Control_Number"/>
+			<xsd:element name="E-ST03-Implementation_Convention_Reference" type="E-ST03-Implementation_Convention_Reference"/>
+		</xsd:sequence>
+		<xsd:attribute name="Type" default="Segment" type="xsd:string"/>
+		<xsd:attribute name="ID" default="ST" type="xsd:string"/>
+		<xsd:attribute name="Name" default="Transaction Set Header" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="E-ST01-Transaction_Set_Identifier_Code">
+		<xsd:annotation>
+			<xsd:documentation>Code uniquely identifying a Transaction Set </xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-String-Type">
+				<xsd:enumeration value="276"/>
+				<xsd:attribute name="EDIDataType" fixed="ID" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="143" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Transaction Set Identifier Code" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="E-ST02-Transaction_Set_Control_Number">
+		<xsd:annotation>
+			<xsd:documentation>Identifying control number that must be unique within the transaction set functional group assigned by the originator for a transaction set </xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-String-Type">
+				<xsd:attribute name="EDIDataType" fixed="AN" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="329" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Transaction Set Control Number" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="E-ST03-Implementation_Convention_Reference">
+		<xsd:annotation>
+			<xsd:documentation>Reference assigned to identify Implementation Convention </xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-String-Type">
+				<xsd:minLength value="1"/>
+				<xsd:maxLength value="35"/>
+				<xsd:attribute name="EDIDataType" fixed="AN" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="1705" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Implementation Convention Reference" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="S-BHT-Beginning_of_Hierarchical_Transaction">
+		<xsd:annotation>
+			<xsd:documentation>To define the business hierarchical structure of the transaction set and identify the business application purpose and reference data, i.e., number, date, and time</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="E-BHT01-Hierarchical_Structure_Code" type="E-BHT01-Hierarchical_Structure_Code"/>
+			<xsd:element name="E-BHT02-Transaction_Set_Purpose_Code" type="E-BHT02-Transaction_Set_Purpose_Code"/>
+			<xsd:element name="E-BHT03-Reference_Identification" type="E-BHT03-Reference_Identification"/>
+			<xsd:element name="E-BHT04-Date" type="E-BHT04-Date"/>
+			<xsd:element name="E-BHT05-Time" type="E-BHT05-Time"/>
+			<xsd:element name="E-BHT06-Transaction_Type_Code" type="E-BHT06-Transaction_Type_Code" minOccurs="0" nillable="true"/>
+		</xsd:sequence>
+		<xsd:attribute name="Type" default="Segment" type="xsd:string"/>
+		<xsd:attribute name="ID" default="BHT" type="xsd:string"/>
+		<xsd:attribute name="Name" default="Beginning of Hierarchical Transaction" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="E-BHT01-Hierarchical_Structure_Code">
+		<xsd:annotation>
+			<xsd:documentation>Code indicating the hierarchical application structure of a transaction set that utilizes the HL segment to define the structure of the transaction set </xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-String-Type">
+				<xsd:enumeration value="0010"/>
+				<xsd:attribute name="EDIDataType" fixed="ID" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="1005" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Hierarchical Structure Code" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="E-BHT02-Transaction_Set_Purpose_Code">
+		<xsd:annotation>
+			<xsd:documentation>Code identifying purpose of transaction set </xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-String-Type">
+				<xsd:enumeration value="13"/>
+				<xsd:attribute name="EDIDataType" fixed="ID" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="353" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Transaction Set Purpose Code" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="E-BHT03-Reference_Identification">
+		<xsd:annotation>
+			<xsd:documentation>Reference information as defined for a particular Transaction Set or as specified by the Reference Identification Qualifier </xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-String-Type">
+				<xsd:minLength value="1"/>
+				<xsd:maxLength value="50"/>
+				<xsd:attribute name="EDIDataType" fixed="AN" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="127" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Reference Identification" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="E-BHT04-Date">
+		<xsd:annotation>
+			<xsd:documentation>Date expressed as CCYYMMDD where CC represents the first two digits of the calendar year </xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-String-Type">
+				<xsd:minLength value="8"/>
+				<xsd:maxLength value="8"/>
+				<xsd:attribute name="EDIDataType" fixed="DT" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="373" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Date" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="E-BHT05-Time">
+		<xsd:annotation>
+			<xsd:documentation>Time expressed in 24-hour clock time as follows: HHMM, or HHMMSS, or HHMMSSD, or HHMMSSDD, where H = hours (00-23), M = minutes (00-59), S = integer seconds (00-59) and DD = decimal seconds; decimal seconds are expressed as follows: D = tenths (0-9) and DD = hundredths (00-99) </xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-String-Type">
+				<xsd:minLength value="4"/>
+				<xsd:maxLength value="8"/>
+				<xsd:attribute name="EDIDataType" fixed="TM" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="337" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Time" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="E-BHT06-Transaction_Type_Code">
+		<xsd:annotation>
+			<xsd:documentation>Code specifying the type of transaction </xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="Type" default="Element" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="L-2000A">
+		<xsd:annotation>
+			<xsd:documentation>To identify dependencies among and the content of hierarchically related groups of data segments</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="S-HL-Information_Source_Level" type="S-HL-Information_Source_Level" minOccurs="1"/>
+			<xsd:element name="L-2100A" type="L-2100A"/>
+		</xsd:sequence>
+		<xsd:attribute name="Type" default="Loop" type="xsd:string"/>
+		<xsd:attribute name="ID" default="2000A" type="xsd:string"/>
+		<xsd:attribute name="Name" default="Information Source Level" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="S-HL-Information_Source_Level">
+		<xsd:annotation>
+			<xsd:documentation>To identify dependencies among and the content of hierarchically related groups of data segments</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="E-HL01-Hierarchical_ID_Number" type="E-HL01-Hierarchical_ID_Number"/>
+			<xsd:element name="E-HL02-Hierarchical_Parent_ID_Number" type="E-HL02-Hierarchical_Parent_ID_Number" minOccurs="0" nillable="true"/>
+			<xsd:element name="E-HL03-Hierarchical_Level_Code" type="E-HL03-Hierarchical_Level_Code"/>
+			<xsd:element name="E-HL04-Hierarchical_Child_Code" type="E-HL04-Hierarchical_Child_Code"/>
+		</xsd:sequence>
+		<xsd:attribute name="Type" default="Segment" type="xsd:string"/>
+		<xsd:attribute name="ID" default="HL" type="xsd:string"/>
+		<xsd:attribute name="Name" default="Information Source Level" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="E-HL01-Hierarchical_ID_Number">
+		<xsd:annotation>
+			<xsd:documentation>A unique number assigned by the sender to identify a particular data segment in a hierarchical structure </xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-String-Type">
+				<xsd:minLength value="1"/>
+				<xsd:maxLength value="12"/>
+				<xsd:attribute name="EDIDataType" fixed="AN" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="628" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Hierarchical ID Number" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="E-HL02-Hierarchical_Parent_ID_Number">
+		<xsd:annotation>
+			<xsd:documentation>Identification number of the next higher hierarchical data segment that the data segment being described is subordinate to </xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="Type" default="Element" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="E-HL03-Hierarchical_Level_Code">
+		<xsd:annotation>
+			<xsd:documentation>Code defining the characteristic of a level in a hierarchical structure </xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-String-Type">
+				<xsd:enumeration value="20"/>
+				<xsd:attribute name="EDIDataType" fixed="ID" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="735" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Hierarchical Level Code" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="E-HL04-Hierarchical_Child_Code">
+		<xsd:annotation>
+			<xsd:documentation>Code indicating if there are hierarchical child data segments subordinate to the level being described </xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-String-Type">
+				<xsd:enumeration value="1"/>
+				<xsd:attribute name="EDIDataType" fixed="ID" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="736" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Hierarchical Child Code" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="L-2100A">
+		<xsd:annotation>
+			<xsd:documentation>To supply the full name of an individual or organizational entity</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="S-NM1-Payer_Name" type="S-NM1-Payer_Name" minOccurs="1"/>
+		</xsd:sequence>
+		<xsd:attribute name="Type" default="Loop" type="xsd:string"/>
+		<xsd:attribute name="ID" default="2100A" type="xsd:string"/>
+		<xsd:attribute name="Name" default="Payer Name" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="S-NM1-Payer_Name">
+		<xsd:annotation>
+			<xsd:documentation>To supply the full name of an individual or organizational entity</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="E-NM101-Entity_Identifier_Code" type="E-NM101-Entity_Identifier_Code"/>
+			<xsd:element name="E-NM102-Entity_Type_Qualifier" type="E-NM102-Entity_Type_Qualifier"/>
+			<xsd:element name="E-NM103-Name_Last_or_Organization_Name" type="E-NM103-Name_Last_or_Organization_Name"/>
+			<xsd:element name="E-NM104-Name_First" type="E-NM104-Name_First" minOccurs="0" nillable="true"/>
+			<xsd:element name="E-NM105-Name_Middle" type="E-NM105-Name_Middle" minOccurs="0" nillable="true"/>
+			<xsd:element name="E-NM106-Name_Prefix" type="E-NM106-Name_Prefix" minOccurs="0" nillable="true"/>
+			<xsd:element name="E-NM107-Name_Suffix" type="E-NM107-Name_Suffix" minOccurs="0" nillable="true"/>
+			<xsd:element name="E-NM108-Identification_Code_Qualifier" type="E-NM108-Identification_Code_Qualifier"/>
+			<xsd:element name="E-NM109-Identification_Code" type="E-NM109-Identification_Code"/>
+			<xsd:element name="E-NM110-Entity_Relationship_Code" type="E-NM110-Entity_Relationship_Code" minOccurs="0" nillable="true"/>
+			<xsd:element name="E-NM111-Entity_Identifier_Code" type="E-NM111-Entity_Identifier_Code" minOccurs="0" nillable="true"/>
+			<xsd:element name="E-NM112-Name_Last_or_Organization_Name" type="E-NM112-Name_Last_or_Organization_Name" minOccurs="0" nillable="true"/>
+		</xsd:sequence>
+		<xsd:attribute name="Type" default="Segment" type="xsd:string"/>
+		<xsd:attribute name="ID" default="NM1" type="xsd:string"/>
+		<xsd:attribute name="Name" default="Payer Name" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="E-NM101-Entity_Identifier_Code">
+		<xsd:annotation>
+			<xsd:documentation>Code identifying an organizational entity, a physical location, property or an individual </xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-String-Type">
+				<xsd:enumeration value="PR"/>
+				<xsd:attribute name="EDIDataType" fixed="ID" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="98" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Entity Identifier Code" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="E-NM102-Entity_Type_Qualifier">
+		<xsd:annotation>
+			<xsd:documentation>Code qualifying the type of entity </xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-String-Type">
+				<xsd:enumeration value="2"/>
+				<xsd:attribute name="EDIDataType" fixed="ID" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="1065" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Entity Type Qualifier" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="E-NM103-Name_Last_or_Organization_Name">
+		<xsd:annotation>
+			<xsd:documentation>Individual last name or organizational name </xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-String-Type">
+				<xsd:minLength value="1"/>
+				<xsd:maxLength value="60"/>
+				<xsd:attribute name="EDIDataType" fixed="AN" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="1035" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Name Last or Organization Name" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="E-NM104-Name_First">
+		<xsd:annotation>
+			<xsd:documentation>Individual first name </xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="Type" default="Element" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="E-NM105-Name_Middle">
+		<xsd:annotation>
+			<xsd:documentation>Individual middle name or initial </xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="Type" default="Element" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="E-NM106-Name_Prefix">
+		<xsd:annotation>
+			<xsd:documentation>Prefix to individual name </xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="Type" default="Element" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="E-NM107-Name_Suffix">
+		<xsd:annotation>
+			<xsd:documentation>Suffix to individual name </xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="Type" default="Element" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="E-NM108-Identification_Code_Qualifier">
+		<xsd:annotation>
+			<xsd:documentation>Code designating the system/method of code structure used for Identification Code (67) </xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-String-Type">
+				<xsd:enumeration value="PI"/>
+				<xsd:enumeration value="XV"/>
+				<xsd:attribute name="EDIDataType" fixed="ID" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="66" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Identification Code Qualifier" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="E-NM109-Identification_Code">
+		<xsd:annotation>
+			<xsd:documentation>Code identifying a party or other code </xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-String-Type">
+				<xsd:minLength value="2"/>
+				<xsd:maxLength value="80"/>
+				<xsd:attribute name="EDIDataType" fixed="AN" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="67" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Identification Code" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="E-NM110-Entity_Relationship_Code">
+		<xsd:annotation>
+			<xsd:documentation>Code describing entity relationship </xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="Type" default="Element" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="E-NM111-Entity_Identifier_Code">
+		<xsd:annotation>
+			<xsd:documentation>Code identifying an organizational entity, a physical location, property or an individual </xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="Type" default="Element" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="E-NM112-Name_Last_or_Organization_Name">
+		<xsd:annotation>
+			<xsd:documentation>Individual last name or organizational name </xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="Type" default="Element" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="L-2000B">
+		<xsd:annotation>
+			<xsd:documentation>To identify dependencies among and the content of hierarchically related groups of data segments</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="S-HL-Information_Receiver_Level" type="S-HL-Information_Receiver_Level" minOccurs="1"/>
+			<xsd:element name="L-2100B" type="L-2100B"/>
+		</xsd:sequence>
+		<xsd:attribute name="Type" default="Loop" type="xsd:string"/>
+		<xsd:attribute name="ID" default="2000B" type="xsd:string"/>
+		<xsd:attribute name="Name" default="Information Receiver Level" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="S-HL-Information_Receiver_Level">
+		<xsd:annotation>
+			<xsd:documentation>To identify dependencies among and the content of hierarchically related groups of data segments</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="E-HL01-Hierarchical_ID_Number" type="E-HL01-Hierarchical_ID_Number"/>
+			<xsd:element name="E-HL02-Hierarchical_Parent_ID_Number" type="E-HL02-Hierarchical_Parent_ID_Number_1"/>
+			<xsd:element name="E-HL03-Hierarchical_Level_Code" type="E-HL03-Hierarchical_Level_Code_1"/>
+			<xsd:element name="E-HL04-Hierarchical_Child_Code" type="E-HL04-Hierarchical_Child_Code"/>
+		</xsd:sequence>
+		<xsd:attribute name="Type" default="Segment" type="xsd:string"/>
+		<xsd:attribute name="ID" default="HL" type="xsd:string"/>
+		<xsd:attribute name="Name" default="Information Receiver Level" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="E-HL02-Hierarchical_Parent_ID_Number_1">
+		<xsd:annotation>
+			<xsd:documentation>Identification number of the next higher hierarchical data segment that the data segment being described is subordinate to </xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-String-Type">
+				<xsd:minLength value="1"/>
+				<xsd:maxLength value="12"/>
+				<xsd:attribute name="EDIDataType" fixed="AN" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="734" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Hierarchical Parent ID Number" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="E-HL03-Hierarchical_Level_Code_1">
+		<xsd:annotation>
+			<xsd:documentation>Code defining the characteristic of a level in a hierarchical structure </xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-String-Type">
+				<xsd:enumeration value="21"/>
+				<xsd:attribute name="EDIDataType" fixed="ID" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="735" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Hierarchical Level Code" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="L-2100B">
+		<xsd:annotation>
+			<xsd:documentation>To supply the full name of an individual or organizational entity</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="S-NM1-Information_Receiver_Name" type="S-NM1-Information_Receiver_Name" minOccurs="1"/>
+		</xsd:sequence>
+		<xsd:attribute name="Type" default="Loop" type="xsd:string"/>
+		<xsd:attribute name="ID" default="2100B" type="xsd:string"/>
+		<xsd:attribute name="Name" default="Information Receiver Name" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="S-NM1-Information_Receiver_Name">
+		<xsd:annotation>
+			<xsd:documentation>To supply the full name of an individual or organizational entity</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="E-NM101-Entity_Identifier_Code" type="E-NM101-Entity_Identifier_Code_1"/>
+			<xsd:element name="E-NM102-Entity_Type_Qualifier" type="E-NM102-Entity_Type_Qualifier_1"/>
+			<xsd:element name="E-NM103-Name_Last_or_Organization_Name" type="E-NM103-Name_Last_or_Organization_Name" minOccurs="0" nillable="true"/>
+			<xsd:element name="E-NM104-Name_First" type="E-NM104-Name_First_1" minOccurs="0" nillable="true"/>
+			<xsd:element name="E-NM105-Name_Middle" type="E-NM105-Name_Middle_1" minOccurs="0" nillable="true"/>
+			<xsd:element name="E-NM106-Name_Prefix" type="E-NM106-Name_Prefix" minOccurs="0" nillable="true"/>
+			<xsd:element name="E-NM107-Name_Suffix" type="E-NM107-Name_Suffix" minOccurs="0" nillable="true"/>
+			<xsd:element name="E-NM108-Identification_Code_Qualifier" type="E-NM108-Identification_Code_Qualifier_1"/>
+			<xsd:element name="E-NM109-Identification_Code" type="E-NM109-Identification_Code"/>
+			<xsd:element name="E-NM110-Entity_Relationship_Code" type="E-NM110-Entity_Relationship_Code" minOccurs="0" nillable="true"/>
+			<xsd:element name="E-NM111-Entity_Identifier_Code" type="E-NM111-Entity_Identifier_Code" minOccurs="0" nillable="true"/>
+			<xsd:element name="E-NM112-Name_Last_or_Organization_Name" type="E-NM112-Name_Last_or_Organization_Name" minOccurs="0" nillable="true"/>
+		</xsd:sequence>
+		<xsd:attribute name="Type" default="Segment" type="xsd:string"/>
+		<xsd:attribute name="ID" default="NM1" type="xsd:string"/>
+		<xsd:attribute name="Name" default="Information Receiver Name" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="E-NM101-Entity_Identifier_Code_1">
+		<xsd:annotation>
+			<xsd:documentation>Code identifying an organizational entity, a physical location, property or an individual </xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-String-Type">
+				<xsd:enumeration value="41"/>
+				<xsd:attribute name="EDIDataType" fixed="ID" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="98" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Entity Identifier Code" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="E-NM102-Entity_Type_Qualifier_1">
+		<xsd:annotation>
+			<xsd:documentation>Code qualifying the type of entity </xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-String-Type">
+				<xsd:enumeration value="1"/>
+				<xsd:enumeration value="2"/>
+				<xsd:attribute name="EDIDataType" fixed="ID" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="1065" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Entity Type Qualifier" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="E-NM104-Name_First_1">
+		<xsd:annotation>
+			<xsd:documentation>Individual first name </xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-String-Type">
+				<xsd:minLength value="1"/>
+				<xsd:maxLength value="35"/>
+				<xsd:attribute name="EDIDataType" fixed="AN" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="1036" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Name First" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="E-NM105-Name_Middle_1">
+		<xsd:annotation>
+			<xsd:documentation>Individual middle name or initial </xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-String-Type">
+				<xsd:minLength value="1"/>
+				<xsd:maxLength value="25"/>
+				<xsd:attribute name="EDIDataType" fixed="AN" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="1037" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Name Middle" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="E-NM108-Identification_Code_Qualifier_1">
+		<xsd:annotation>
+			<xsd:documentation>Code designating the system/method of code structure used for Identification Code (67) </xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-String-Type">
+				<xsd:enumeration value="46"/>
+				<xsd:attribute name="EDIDataType" fixed="ID" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="66" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Identification Code Qualifier" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="L-2000C">
+		<xsd:annotation>
+			<xsd:documentation>To identify dependencies among and the content of hierarchically related groups of data segments</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="S-HL-Service_Provider_Level" type="S-HL-Service_Provider_Level" minOccurs="1"/>
+			<xsd:element name="L-2100C" type="L-2100C" maxOccurs="2"/>
+		</xsd:sequence>
+		<xsd:attribute name="Type" default="Loop" type="xsd:string"/>
+		<xsd:attribute name="ID" default="2000C" type="xsd:string"/>
+		<xsd:attribute name="Name" default="Service Provider Level" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="S-HL-Service_Provider_Level">
+		<xsd:annotation>
+			<xsd:documentation>To identify dependencies among and the content of hierarchically related groups of data segments</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="E-HL01-Hierarchical_ID_Number" type="E-HL01-Hierarchical_ID_Number"/>
+			<xsd:element name="E-HL02-Hierarchical_Parent_ID_Number" type="E-HL02-Hierarchical_Parent_ID_Number_1"/>
+			<xsd:element name="E-HL03-Hierarchical_Level_Code" type="E-HL03-Hierarchical_Level_Code_2"/>
+			<xsd:element name="E-HL04-Hierarchical_Child_Code" type="E-HL04-Hierarchical_Child_Code"/>
+		</xsd:sequence>
+		<xsd:attribute name="Type" default="Segment" type="xsd:string"/>
+		<xsd:attribute name="ID" default="HL" type="xsd:string"/>
+		<xsd:attribute name="Name" default="Service Provider Level" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="E-HL03-Hierarchical_Level_Code_2">
+		<xsd:annotation>
+			<xsd:documentation>Code defining the characteristic of a level in a hierarchical structure </xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-String-Type">
+				<xsd:enumeration value="19"/>
+				<xsd:attribute name="EDIDataType" fixed="ID" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="735" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Hierarchical Level Code" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="L-2100C">
+		<xsd:annotation>
+			<xsd:documentation>To supply the full name of an individual or organizational entity</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="S-NM1-Provider_Name" type="S-NM1-Provider_Name" minOccurs="1"/>
+		</xsd:sequence>
+		<xsd:attribute name="Type" default="Loop" type="xsd:string"/>
+		<xsd:attribute name="ID" default="2100C" type="xsd:string"/>
+		<xsd:attribute name="Name" default="Provider Name" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="S-NM1-Provider_Name">
+		<xsd:annotation>
+			<xsd:documentation>To supply the full name of an individual or organizational entity</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="E-NM101-Entity_Identifier_Code" type="E-NM101-Entity_Identifier_Code_2"/>
+			<xsd:element name="E-NM102-Entity_Type_Qualifier" type="E-NM102-Entity_Type_Qualifier_1"/>
+			<xsd:element name="E-NM103-Name_Last_or_Organization_Name" type="E-NM103-Name_Last_or_Organization_Name" minOccurs="0" nillable="true"/>
+			<xsd:element name="E-NM104-Name_First" type="E-NM104-Name_First_1" minOccurs="0" nillable="true"/>
+			<xsd:element name="E-NM105-Name_Middle" type="E-NM105-Name_Middle_1" minOccurs="0" nillable="true"/>
+			<xsd:element name="E-NM106-Name_Prefix" type="E-NM106-Name_Prefix" minOccurs="0" nillable="true"/>
+			<xsd:element name="E-NM107-Name_Suffix" type="E-NM107-Name_Suffix_1" minOccurs="0" nillable="true"/>
+			<xsd:element name="E-NM108-Identification_Code_Qualifier" type="E-NM108-Identification_Code_Qualifier_2"/>
+			<xsd:element name="E-NM109-Identification_Code" type="E-NM109-Identification_Code"/>
+			<xsd:element name="E-NM110-Entity_Relationship_Code" type="E-NM110-Entity_Relationship_Code" minOccurs="0" nillable="true"/>
+			<xsd:element name="E-NM111-Entity_Identifier_Code" type="E-NM111-Entity_Identifier_Code" minOccurs="0" nillable="true"/>
+			<xsd:element name="E-NM112-Name_Last_or_Organization_Name" type="E-NM112-Name_Last_or_Organization_Name" minOccurs="0" nillable="true"/>
+		</xsd:sequence>
+		<xsd:attribute name="Type" default="Segment" type="xsd:string"/>
+		<xsd:attribute name="ID" default="NM1" type="xsd:string"/>
+		<xsd:attribute name="Name" default="Provider Name" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="E-NM101-Entity_Identifier_Code_2">
+		<xsd:annotation>
+			<xsd:documentation>Code identifying an organizational entity, a physical location, property or an individual </xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-String-Type">
+				<xsd:enumeration value="1P"/>
+				<xsd:attribute name="EDIDataType" fixed="ID" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="98" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Entity Identifier Code" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="E-NM107-Name_Suffix_1">
+		<xsd:annotation>
+			<xsd:documentation>Suffix to individual name </xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-String-Type">
+				<xsd:minLength value="1"/>
+				<xsd:maxLength value="10"/>
+				<xsd:attribute name="EDIDataType" fixed="AN" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="1039" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Name Suffix" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="E-NM108-Identification_Code_Qualifier_2">
+		<xsd:annotation>
+			<xsd:documentation>Code designating the system/method of code structure used for Identification Code (67) </xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-String-Type">
+				<xsd:enumeration value="FI"/>
+				<xsd:enumeration value="SV"/>
+				<xsd:enumeration value="XX"/>
+				<xsd:attribute name="EDIDataType" fixed="ID" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="66" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Identification Code Qualifier" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="L-2000D">
+		<xsd:annotation>
+			<xsd:documentation>To identify dependencies among and the content of hierarchically related groups of data segments</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="S-HL-Subscriber_Level" type="S-HL-Subscriber_Level" minOccurs="1"/>
+			<xsd:element name="S-DMG-Subscriber_Demographic_Information" type="S-DMG-Subscriber_Demographic_Information" minOccurs="0" nillable="true"/>
+			<xsd:element name="L-2100D" type="L-2100D"/>
+			<xsd:element name="L-2200D" type="L-2200D" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+		</xsd:sequence>
+		<xsd:attribute name="Type" default="Loop" type="xsd:string"/>
+		<xsd:attribute name="ID" default="2000D" type="xsd:string"/>
+		<xsd:attribute name="Name" default="Subscriber Level" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="S-HL-Subscriber_Level">
+		<xsd:annotation>
+			<xsd:documentation>To identify dependencies among and the content of hierarchically related groups of data segments</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="E-HL01-Hierarchical_ID_Number" type="E-HL01-Hierarchical_ID_Number"/>
+			<xsd:element name="E-HL02-Hierarchical_Parent_ID_Number" type="E-HL02-Hierarchical_Parent_ID_Number_1"/>
+			<xsd:element name="E-HL03-Hierarchical_Level_Code" type="E-HL03-Hierarchical_Level_Code_3"/>
+			<xsd:element name="E-HL04-Hierarchical_Child_Code" type="E-HL04-Hierarchical_Child_Code_1"/>
+		</xsd:sequence>
+		<xsd:attribute name="Type" default="Segment" type="xsd:string"/>
+		<xsd:attribute name="ID" default="HL" type="xsd:string"/>
+		<xsd:attribute name="Name" default="Subscriber Level" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="E-HL03-Hierarchical_Level_Code_3">
+		<xsd:annotation>
+			<xsd:documentation>Code defining the characteristic of a level in a hierarchical structure </xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-String-Type">
+				<xsd:enumeration value="22"/>
+				<xsd:attribute name="EDIDataType" fixed="ID" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="735" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Hierarchical Level Code" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="E-HL04-Hierarchical_Child_Code_1">
+		<xsd:annotation>
+			<xsd:documentation>Code indicating if there are hierarchical child data segments subordinate to the level being described </xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-String-Type">
+				<xsd:enumeration value="0"/>
+				<xsd:enumeration value="1"/>
+				<xsd:attribute name="EDIDataType" fixed="ID" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="736" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Hierarchical Child Code" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="S-DMG-Subscriber_Demographic_Information">
+		<xsd:annotation>
+			<xsd:documentation>To supply demographic information</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="E-DMG01-Date_Time_Period_Format_Qualifier" type="E-DMG01-Date_Time_Period_Format_Qualifier"/>
+			<xsd:element name="E-DMG02-Date_Time_Period" type="E-DMG02-Date_Time_Period"/>
+			<xsd:element name="E-DMG03-Gender_Code" type="E-DMG03-Gender_Code" minOccurs="0" nillable="true"/>
+			<xsd:element name="E-DMG04-Marital_Status_Code" type="E-DMG04-Marital_Status_Code" minOccurs="0" nillable="true"/>
+			<xsd:element name="C-C056-Composite_Race_or_Ethnicity_Information" type="C-C056-Composite_Race_or_Ethnicity_Information" minOccurs="0" maxOccurs="10" nillable="true"/>
+			<xsd:element name="E-DMG06-Citizenship_Status_Code" type="E-DMG06-Citizenship_Status_Code" minOccurs="0" nillable="true"/>
+			<xsd:element name="E-DMG07-Country_Code" type="E-DMG07-Country_Code" minOccurs="0" nillable="true"/>
+			<xsd:element name="E-DMG08-Basis_of_Verification_Code" type="E-DMG08-Basis_of_Verification_Code" minOccurs="0" nillable="true"/>
+			<xsd:element name="E-DMG09-Quantity" type="E-DMG09-Quantity" minOccurs="0" nillable="true"/>
+			<xsd:element name="E-DMG10-Code_List_Qualifier_Code" type="E-DMG10-Code_List_Qualifier_Code" minOccurs="0" nillable="true"/>
+			<xsd:element name="E-DMG11-Industry_Code" type="E-DMG11-Industry_Code" minOccurs="0" nillable="true"/>
+		</xsd:sequence>
+		<xsd:attribute name="Type" default="Segment" type="xsd:string"/>
+		<xsd:attribute name="ID" default="DMG" type="xsd:string"/>
+		<xsd:attribute name="Name" default="Subscriber Demographic Information" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="E-DMG01-Date_Time_Period_Format_Qualifier">
+		<xsd:annotation>
+			<xsd:documentation>Code indicating the date format, time format, or date and time format </xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-String-Type">
+				<xsd:enumeration value="D8"/>
+				<xsd:attribute name="EDIDataType" fixed="ID" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="1250" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Date Time Period Format Qualifier" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="E-DMG02-Date_Time_Period">
+		<xsd:annotation>
+			<xsd:documentation>Expression of a date, a time, or range of dates, times or dates and times </xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-String-Type">
+				<xsd:minLength value="1"/>
+				<xsd:maxLength value="35"/>
+				<xsd:attribute name="EDIDataType" fixed="AN" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="1251" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Date Time Period" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="E-DMG03-Gender_Code">
+		<xsd:annotation>
+			<xsd:documentation>Code indicating the sex of the individual </xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-String-Type">
+				<xsd:enumeration value="F"/>
+				<xsd:enumeration value="M"/>
+				<xsd:attribute name="EDIDataType" fixed="ID" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="1068" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Gender Code" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="E-DMG04-Marital_Status_Code">
+		<xsd:annotation>
+			<xsd:documentation>Code defining the marital status of a person </xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="Type" default="Element" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="C-C056-Composite_Race_or_Ethnicity_Information">
+		<xsd:annotation>
+			<xsd:documentation>To send general and detailed information on race or ethnicity </xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="E-DMG01-Race_or_Ethnicity_Code" type="E-DMG01-Race_or_Ethnicity_Code"/>
+			<xsd:element name="E-DMG02-Code_List_Qualifier_Code" type="E-DMG02-Code_List_Qualifier_Code"/>
+			<xsd:element name="E-DMG03-Industry_Code" type="E-DMG03-Industry_Code"/>
+		</xsd:sequence>
+		<xsd:attribute name="Type" default="Composite" type="xsd:string"/>
+		<xsd:attribute name="ID" default="C056" type="xsd:string"/>
+		<xsd:attribute name="Name" default="Composite Race or Ethnicity Information" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="E-DMG01-Race_or_Ethnicity_Code">
+		<xsd:annotation>
+			<xsd:documentation>Code indicating the racial or ethnic background of a person; it is normally self-reported; Under certain circumstances this information is collected for United States Government statistical purposes </xsd:documentation>
+		</xsd:annotation>
+	</xsd:complexType>
+	<xsd:complexType name="E-DMG02-Code_List_Qualifier_Code">
+		<xsd:annotation>
+			<xsd:documentation>Code identifying a specific industry code list </xsd:documentation>
+		</xsd:annotation>
+	</xsd:complexType>
+	<xsd:complexType name="E-DMG03-Industry_Code">
+		<xsd:annotation>
+			<xsd:documentation>Code indicating a code from a specific industry code list </xsd:documentation>
+		</xsd:annotation>
+	</xsd:complexType>
+	<xsd:complexType name="E-DMG06-Citizenship_Status_Code">
+		<xsd:annotation>
+			<xsd:documentation>Code indicating citizenship status </xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="Type" default="Element" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="E-DMG07-Country_Code">
+		<xsd:annotation>
+			<xsd:documentation>Code identifying the country </xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="Type" default="Element" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="E-DMG08-Basis_of_Verification_Code">
+		<xsd:annotation>
+			<xsd:documentation>Code indicating the basis of verification </xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="Type" default="Element" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="E-DMG09-Quantity">
+		<xsd:annotation>
+			<xsd:documentation>Numeric value of quantity </xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="Type" default="Element" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="E-DMG10-Code_List_Qualifier_Code">
+		<xsd:annotation>
+			<xsd:documentation>Code identifying a specific industry code list </xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="Type" default="Element" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="E-DMG11-Industry_Code">
+		<xsd:annotation>
+			<xsd:documentation>Code indicating a code from a specific industry code list </xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="Type" default="Element" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="L-2100D">
+		<xsd:annotation>
+			<xsd:documentation>To supply the full name of an individual or organizational entity</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="S-NM1-Subscriber_Name" type="S-NM1-Subscriber_Name" minOccurs="1"/>
+		</xsd:sequence>
+		<xsd:attribute name="Type" default="Loop" type="xsd:string"/>
+		<xsd:attribute name="ID" default="2100D" type="xsd:string"/>
+		<xsd:attribute name="Name" default="Subscriber Name" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="S-NM1-Subscriber_Name">
+		<xsd:annotation>
+			<xsd:documentation>To supply the full name of an individual or organizational entity</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="E-NM101-Entity_Identifier_Code" type="E-NM101-Entity_Identifier_Code_3"/>
+			<xsd:element name="E-NM102-Entity_Type_Qualifier" type="E-NM102-Entity_Type_Qualifier_1"/>
+			<xsd:element name="E-NM103-Name_Last_or_Organization_Name" type="E-NM103-Name_Last_or_Organization_Name"/>
+			<xsd:element name="E-NM104-Name_First" type="E-NM104-Name_First_1" minOccurs="0" nillable="true"/>
+			<xsd:element name="E-NM105-Name_Middle" type="E-NM105-Name_Middle_1" minOccurs="0" nillable="true"/>
+			<xsd:element name="E-NM106-Name_Prefix" type="E-NM106-Name_Prefix" minOccurs="0" nillable="true"/>
+			<xsd:element name="E-NM107-Name_Suffix" type="E-NM107-Name_Suffix_1" minOccurs="0" nillable="true"/>
+			<xsd:element name="E-NM108-Identification_Code_Qualifier" type="E-NM108-Identification_Code_Qualifier_3"/>
+			<xsd:element name="E-NM109-Identification_Code" type="E-NM109-Identification_Code"/>
+			<xsd:element name="E-NM110-Entity_Relationship_Code" type="E-NM110-Entity_Relationship_Code" minOccurs="0" nillable="true"/>
+			<xsd:element name="E-NM111-Entity_Identifier_Code" type="E-NM111-Entity_Identifier_Code" minOccurs="0" nillable="true"/>
+			<xsd:element name="E-NM112-Name_Last_or_Organization_Name" type="E-NM112-Name_Last_or_Organization_Name" minOccurs="0" nillable="true"/>
+		</xsd:sequence>
+		<xsd:attribute name="Type" default="Segment" type="xsd:string"/>
+		<xsd:attribute name="ID" default="NM1" type="xsd:string"/>
+		<xsd:attribute name="Name" default="Subscriber Name" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="E-NM101-Entity_Identifier_Code_3">
+		<xsd:annotation>
+			<xsd:documentation>Code identifying an organizational entity, a physical location, property or an individual </xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-String-Type">
+				<xsd:enumeration value="IL"/>
+				<xsd:attribute name="EDIDataType" fixed="ID" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="98" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Entity Identifier Code" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="E-NM108-Identification_Code_Qualifier_3">
+		<xsd:annotation>
+			<xsd:documentation>Code designating the system/method of code structure used for Identification Code (67) </xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-String-Type">
+				<xsd:enumeration value="24"/>
+				<xsd:enumeration value="II"/>
+				<xsd:enumeration value="MI"/>
+				<xsd:attribute name="EDIDataType" fixed="ID" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="66" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Identification Code Qualifier" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="L-2200D">
+		<xsd:annotation>
+			<xsd:documentation>To uniquely identify a transaction to an application</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="S-TRN-Claim_Status_Tracking_Number" type="S-TRN-Claim_Status_Tracking_Number" minOccurs="1"/>
+			<xsd:choice maxOccurs="7" minOccurs="0">
+				<xsd:element name="S-REF-Payer_Claim_Control_Number" type="S-REF-Payer_Claim_Control_Number" minOccurs="0" nillable="true"/>
+				<xsd:element name="S-REF-Institutional_Bill_Type_Identification" type="S-REF-Institutional_Bill_Type_Identification" minOccurs="0" nillable="true"/>
+				<xsd:element name="S-REF-Application_or_Location_System_Identifier" type="S-REF-Application_or_Location_System_Identifier" minOccurs="0" nillable="true"/>
+				<xsd:element name="S-REF-Group_Number" type="S-REF-Group_Number" minOccurs="0" nillable="true"/>
+				<xsd:element name="S-REF-Patient_Control_Number" type="S-REF-Patient_Control_Number" minOccurs="0" nillable="true"/>
+				<xsd:element name="S-REF-Pharmacy_Prescription_Number" type="S-REF-Pharmacy_Prescription_Number" minOccurs="0" nillable="true"/>
+				<xsd:element name="S-REF-Claim_Identification_Number_For_Clearinghouses_and_Other_Transmission_Intermediaries" type="S-REF-Claim_Identification_Number_For_Clearinghouses_and_Other_Transmission_Intermediaries" minOccurs="0" nillable="true"/>
+			</xsd:choice>
+			<xsd:element name="S-AMT-Claim_Submitted_Charges" type="S-AMT-Claim_Submitted_Charges" minOccurs="0" nillable="true"/>
+			<xsd:element name="S-DTP-Claim_Service_Date" type="S-DTP-Claim_Service_Date" minOccurs="0" nillable="true"/>
+			<xsd:element name="L-2210D" type="L-2210D" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+		</xsd:sequence>
+		<xsd:attribute name="Type" default="Loop" type="xsd:string"/>
+		<xsd:attribute name="ID" default="2200D" type="xsd:string"/>
+		<xsd:attribute name="Name" default="Claim Status Tracking Number" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="S-TRN-Claim_Status_Tracking_Number">
+		<xsd:annotation>
+			<xsd:documentation>To uniquely identify a transaction to an application</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="E-TRN01-Trace_Type_Code" type="E-TRN01-Trace_Type_Code"/>
+			<xsd:element name="E-TRN02-Reference_Identification" type="E-TRN02-Reference_Identification"/>
+			<xsd:element name="E-TRN03-Originating_Company_Identifier" type="E-TRN03-Originating_Company_Identifier" minOccurs="0" nillable="true"/>
+			<xsd:element name="E-TRN04-Reference_Identification" type="E-TRN04-Reference_Identification" minOccurs="0" nillable="true"/>
+		</xsd:sequence>
+		<xsd:attribute name="Type" default="Segment" type="xsd:string"/>
+		<xsd:attribute name="ID" default="TRN" type="xsd:string"/>
+		<xsd:attribute name="Name" default="Claim Status Tracking Number" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="E-TRN01-Trace_Type_Code">
+		<xsd:annotation>
+			<xsd:documentation>Code identifying which transaction is being referenced </xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-String-Type">
+				<xsd:enumeration value="1"/>
+				<xsd:attribute name="EDIDataType" fixed="ID" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="481" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Trace Type Code" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="E-TRN02-Reference_Identification">
+		<xsd:annotation>
+			<xsd:documentation>Reference information as defined for a particular Transaction Set or as specified by the Reference Identification Qualifier </xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-String-Type">
+				<xsd:minLength value="1"/>
+				<xsd:maxLength value="50"/>
+				<xsd:attribute name="EDIDataType" fixed="AN" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="127" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Reference Identification" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="E-TRN03-Originating_Company_Identifier">
+		<xsd:annotation>
+			<xsd:documentation>A unique identifier designating the company initiating the funds transfer instructions, business transaction or assigning tracking reference identification. </xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="Type" default="Element" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="E-TRN04-Reference_Identification">
+		<xsd:annotation>
+			<xsd:documentation>Reference information as defined for a particular Transaction Set or as specified by the Reference Identification Qualifier </xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="Type" default="Element" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="S-REF-Payer_Claim_Control_Number">
+		<xsd:annotation>
+			<xsd:documentation>To specify identifying information</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="E-REF01-Reference_Identification_Qualifier" type="E-REF01-Reference_Identification_Qualifier"/>
+			<xsd:element name="E-REF02-Reference_Identification" type="E-REF02-Reference_Identification"/>
+			<xsd:element name="E-REF03-Description" type="E-REF03-Description" minOccurs="0" nillable="true"/>
+			<xsd:element name="C-C040-Reference_Identifier" type="C-C040-Reference_Identifier" minOccurs="0" nillable="true"/>
+		</xsd:sequence>
+		<xsd:attribute name="Type" default="Segment" type="xsd:string"/>
+		<xsd:attribute name="ID" default="REF" type="xsd:string"/>
+		<xsd:attribute name="Name" default="Payer Claim Control Number" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="E-REF01-Reference_Identification_Qualifier">
+		<xsd:annotation>
+			<xsd:documentation>Code qualifying the Reference Identification </xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-String-Type">
+				<xsd:enumeration value="1K"/>
+				<xsd:attribute name="EDIDataType" fixed="ID" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="128" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Reference Identification Qualifier" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="E-REF02-Reference_Identification">
+		<xsd:annotation>
+			<xsd:documentation>Reference information as defined for a particular Transaction Set or as specified by the Reference Identification Qualifier </xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-String-Type">
+				<xsd:minLength value="1"/>
+				<xsd:maxLength value="50"/>
+				<xsd:attribute name="EDIDataType" fixed="AN" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="127" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Reference Identification" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="E-REF03-Description">
+		<xsd:annotation>
+			<xsd:documentation>A free-form description to clarify the related data elements and their content </xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="Type" default="Element" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="C-C040-Reference_Identifier">
+		<xsd:annotation>
+			<xsd:documentation>To identify one or more reference numbers or identification numbers as specified by the Reference Qualifier </xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="E-REF01-Reference_Identification_Qualifier" type="E-REF01-Reference_Identification_Qualifier_1"/>
+			<xsd:element name="E-REF02-Reference_Identification" type="E-REF02-Reference_Identification_1"/>
+			<xsd:element name="E-REF03-Reference_Identification_Qualifier" type="E-REF03-Reference_Identification_Qualifier"/>
+			<xsd:element name="E-REF04-Reference_Identification" type="E-REF04-Reference_Identification"/>
+			<xsd:element name="E-REF05-Reference_Identification_Qualifier" type="E-REF05-Reference_Identification_Qualifier"/>
+			<xsd:element name="E-REF06-Reference_Identification" type="E-REF06-Reference_Identification"/>
+		</xsd:sequence>
+		<xsd:attribute name="Type" default="Composite" type="xsd:string"/>
+		<xsd:attribute name="ID" default="C040" type="xsd:string"/>
+		<xsd:attribute name="Name" default="Reference Identifier" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="E-REF01-Reference_Identification_Qualifier_1">
+		<xsd:annotation>
+			<xsd:documentation>Code qualifying the Reference Identification </xsd:documentation>
+		</xsd:annotation>
+	</xsd:complexType>
+	<xsd:complexType name="E-REF02-Reference_Identification_1">
+		<xsd:annotation>
+			<xsd:documentation>Reference information as defined for a particular Transaction Set or as specified by the Reference Identification Qualifier </xsd:documentation>
+		</xsd:annotation>
+	</xsd:complexType>
+	<xsd:complexType name="E-REF03-Reference_Identification_Qualifier">
+		<xsd:annotation>
+			<xsd:documentation>Code qualifying the Reference Identification </xsd:documentation>
+		</xsd:annotation>
+	</xsd:complexType>
+	<xsd:complexType name="E-REF04-Reference_Identification">
+		<xsd:annotation>
+			<xsd:documentation>Reference information as defined for a particular Transaction Set or as specified by the Reference Identification Qualifier </xsd:documentation>
+		</xsd:annotation>
+	</xsd:complexType>
+	<xsd:complexType name="E-REF05-Reference_Identification_Qualifier">
+		<xsd:annotation>
+			<xsd:documentation>Code qualifying the Reference Identification </xsd:documentation>
+		</xsd:annotation>
+	</xsd:complexType>
+	<xsd:complexType name="E-REF06-Reference_Identification">
+		<xsd:annotation>
+			<xsd:documentation>Reference information as defined for a particular Transaction Set or as specified by the Reference Identification Qualifier </xsd:documentation>
+		</xsd:annotation>
+	</xsd:complexType>
+	<xsd:complexType name="S-REF-Institutional_Bill_Type_Identification">
+		<xsd:annotation>
+			<xsd:documentation>To specify identifying information</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="E-REF01-Reference_Identification_Qualifier" type="E-REF01-Reference_Identification_Qualifier_2"/>
+			<xsd:element name="E-REF02-Reference_Identification" type="E-REF02-Reference_Identification"/>
+			<xsd:element name="E-REF03-Description" type="E-REF03-Description" minOccurs="0" nillable="true"/>
+			<xsd:element name="C-C040-Reference_Identifier" type="C-C040-Reference_Identifier" minOccurs="0" nillable="true"/>
+		</xsd:sequence>
+		<xsd:attribute name="Type" default="Segment" type="xsd:string"/>
+		<xsd:attribute name="ID" default="REF" type="xsd:string"/>
+		<xsd:attribute name="Name" default="Institutional Bill Type Identification" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="E-REF01-Reference_Identification_Qualifier_2">
+		<xsd:annotation>
+			<xsd:documentation>Code qualifying the Reference Identification </xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-String-Type">
+				<xsd:enumeration value="BLT"/>
+				<xsd:attribute name="EDIDataType" fixed="ID" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="128" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Reference Identification Qualifier" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="S-REF-Application_or_Location_System_Identifier">
+		<xsd:annotation>
+			<xsd:documentation>To specify identifying information</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="E-REF01-Reference_Identification_Qualifier" type="E-REF01-Reference_Identification_Qualifier_3"/>
+			<xsd:element name="E-REF02-Reference_Identification" type="E-REF02-Reference_Identification"/>
+			<xsd:element name="E-REF03-Description" type="E-REF03-Description" minOccurs="0" nillable="true"/>
+			<xsd:element name="C-C040-Reference_Identifier" type="C-C040-Reference_Identifier" minOccurs="0" nillable="true"/>
+		</xsd:sequence>
+		<xsd:attribute name="Type" default="Segment" type="xsd:string"/>
+		<xsd:attribute name="ID" default="REF" type="xsd:string"/>
+		<xsd:attribute name="Name" default="Application or Location System Identifier" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="E-REF01-Reference_Identification_Qualifier_3">
+		<xsd:annotation>
+			<xsd:documentation>Code qualifying the Reference Identification </xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-String-Type">
+				<xsd:enumeration value="LU"/>
+				<xsd:attribute name="EDIDataType" fixed="ID" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="128" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Reference Identification Qualifier" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="S-REF-Group_Number">
+		<xsd:annotation>
+			<xsd:documentation>To specify identifying information</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="E-REF01-Reference_Identification_Qualifier" type="E-REF01-Reference_Identification_Qualifier_4"/>
+			<xsd:element name="E-REF02-Reference_Identification" type="E-REF02-Reference_Identification"/>
+			<xsd:element name="E-REF03-Description" type="E-REF03-Description" minOccurs="0" nillable="true"/>
+			<xsd:element name="C-C040-Reference_Identifier" type="C-C040-Reference_Identifier" minOccurs="0" nillable="true"/>
+		</xsd:sequence>
+		<xsd:attribute name="Type" default="Segment" type="xsd:string"/>
+		<xsd:attribute name="ID" default="REF" type="xsd:string"/>
+		<xsd:attribute name="Name" default="Group Number" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="E-REF01-Reference_Identification_Qualifier_4">
+		<xsd:annotation>
+			<xsd:documentation>Code qualifying the Reference Identification </xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-String-Type">
+				<xsd:enumeration value="6P"/>
+				<xsd:attribute name="EDIDataType" fixed="ID" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="128" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Reference Identification Qualifier" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="S-REF-Patient_Control_Number">
+		<xsd:annotation>
+			<xsd:documentation>To specify identifying information</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="E-REF01-Reference_Identification_Qualifier" type="E-REF01-Reference_Identification_Qualifier_5"/>
+			<xsd:element name="E-REF02-Reference_Identification" type="E-REF02-Reference_Identification"/>
+			<xsd:element name="E-REF03-Description" type="E-REF03-Description" minOccurs="0" nillable="true"/>
+			<xsd:element name="C-C040-Reference_Identifier" type="C-C040-Reference_Identifier" minOccurs="0" nillable="true"/>
+		</xsd:sequence>
+		<xsd:attribute name="Type" default="Segment" type="xsd:string"/>
+		<xsd:attribute name="ID" default="REF" type="xsd:string"/>
+		<xsd:attribute name="Name" default="Patient Control Number" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="E-REF01-Reference_Identification_Qualifier_5">
+		<xsd:annotation>
+			<xsd:documentation>Code qualifying the Reference Identification </xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-String-Type">
+				<xsd:enumeration value="EJ"/>
+				<xsd:attribute name="EDIDataType" fixed="ID" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="128" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Reference Identification Qualifier" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="S-REF-Pharmacy_Prescription_Number">
+		<xsd:annotation>
+			<xsd:documentation>To specify identifying information</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="E-REF01-Reference_Identification_Qualifier" type="E-REF01-Reference_Identification_Qualifier_6"/>
+			<xsd:element name="E-REF02-Reference_Identification" type="E-REF02-Reference_Identification"/>
+			<xsd:element name="E-REF03-Description" type="E-REF03-Description" minOccurs="0" nillable="true"/>
+			<xsd:element name="C-C040-Reference_Identifier" type="C-C040-Reference_Identifier" minOccurs="0" nillable="true"/>
+		</xsd:sequence>
+		<xsd:attribute name="Type" default="Segment" type="xsd:string"/>
+		<xsd:attribute name="ID" default="REF" type="xsd:string"/>
+		<xsd:attribute name="Name" default="Pharmacy Prescription Number" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="E-REF01-Reference_Identification_Qualifier_6">
+		<xsd:annotation>
+			<xsd:documentation>Code qualifying the Reference Identification </xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-String-Type">
+				<xsd:enumeration value="XZ"/>
+				<xsd:attribute name="EDIDataType" fixed="ID" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="128" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Reference Identification Qualifier" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="S-REF-Claim_Identification_Number_For_Clearinghouses_and_Other_Transmission_Intermediaries">
+		<xsd:annotation>
+			<xsd:documentation>To specify identifying information</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="E-REF01-Reference_Identification_Qualifier" type="E-REF01-Reference_Identification_Qualifier_7"/>
+			<xsd:element name="E-REF02-Reference_Identification" type="E-REF02-Reference_Identification"/>
+			<xsd:element name="E-REF03-Description" type="E-REF03-Description" minOccurs="0" nillable="true"/>
+			<xsd:element name="C-C040-Reference_Identifier" type="C-C040-Reference_Identifier" minOccurs="0" nillable="true"/>
+		</xsd:sequence>
+		<xsd:attribute name="Type" default="Segment" type="xsd:string"/>
+		<xsd:attribute name="ID" default="REF" type="xsd:string"/>
+		<xsd:attribute name="Name" default="Claim Identification Number For Clearinghouses and Other Transmission Intermediaries" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="E-REF01-Reference_Identification_Qualifier_7">
+		<xsd:annotation>
+			<xsd:documentation>Code qualifying the Reference Identification </xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-String-Type">
+				<xsd:enumeration value="D9"/>
+				<xsd:attribute name="EDIDataType" fixed="ID" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="128" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Reference Identification Qualifier" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="S-AMT-Claim_Submitted_Charges">
+		<xsd:annotation>
+			<xsd:documentation>To indicate the total monetary amount</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="E-AMT01-Amount_Qualifier_Code" type="E-AMT01-Amount_Qualifier_Code"/>
+			<xsd:element name="E-AMT02-Monetary_Amount" type="E-AMT02-Monetary_Amount"/>
+			<xsd:element name="E-AMT03-Credit_Debit_Flag_Code" type="E-AMT03-Credit_Debit_Flag_Code" minOccurs="0" nillable="true"/>
+		</xsd:sequence>
+		<xsd:attribute name="Type" default="Segment" type="xsd:string"/>
+		<xsd:attribute name="ID" default="AMT" type="xsd:string"/>
+		<xsd:attribute name="Name" default="Claim Submitted Charges" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="E-AMT01-Amount_Qualifier_Code">
+		<xsd:annotation>
+			<xsd:documentation>Code to qualify amount </xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-String-Type">
+				<xsd:enumeration value="T3"/>
+				<xsd:attribute name="EDIDataType" fixed="ID" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="522" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Amount Qualifier Code" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="E-AMT02-Monetary_Amount">
+		<xsd:annotation>
+			<xsd:documentation>Monetary amount </xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-Decimal-Type">
+				<xsd:attribute name="EDIDataType" fixed="R" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="782" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Monetary Amount" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="E-AMT03-Credit_Debit_Flag_Code">
+		<xsd:annotation>
+			<xsd:documentation>Code indicating whether amount is a credit or debit </xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="Type" default="Element" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="S-DTP-Claim_Service_Date">
+		<xsd:annotation>
+			<xsd:documentation>To specify any or all of a date, a time, or a time period</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="E-DTP01-Date_Time_Qualifier" type="E-DTP01-Date_Time_Qualifier"/>
+			<xsd:element name="E-DTP02-Date_Time_Period_Format_Qualifier" type="E-DTP02-Date_Time_Period_Format_Qualifier"/>
+			<xsd:element name="E-DTP03-Date_Time_Period" type="E-DTP03-Date_Time_Period"/>
+		</xsd:sequence>
+		<xsd:attribute name="Type" default="Segment" type="xsd:string"/>
+		<xsd:attribute name="ID" default="DTP" type="xsd:string"/>
+		<xsd:attribute name="Name" default="Claim Service Date" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="E-DTP01-Date_Time_Qualifier">
+		<xsd:annotation>
+			<xsd:documentation>Code specifying type of date or time, or both date and time </xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-String-Type">
+				<xsd:enumeration value="472"/>
+				<xsd:attribute name="EDIDataType" fixed="ID" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="374" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Date/Time Qualifier" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="E-DTP02-Date_Time_Period_Format_Qualifier">
+		<xsd:annotation>
+			<xsd:documentation>Code indicating the date format, time format, or date and time format </xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-String-Type">
+				<xsd:enumeration value="D8"/>
+				<xsd:enumeration value="RD8"/>
+				<xsd:attribute name="EDIDataType" fixed="ID" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="1250" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Date Time Period Format Qualifier" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="E-DTP03-Date_Time_Period">
+		<xsd:annotation>
+			<xsd:documentation>Expression of a date, a time, or range of dates, times or dates and times </xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-String-Type">
+				<xsd:minLength value="1"/>
+				<xsd:maxLength value="35"/>
+				<xsd:attribute name="EDIDataType" fixed="AN" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="1251" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Date Time Period" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="L-2210D">
+		<xsd:annotation>
+			<xsd:documentation>To supply payment and control information to a provider for a particular service</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="S-SVC-Service_Line_Information" type="S-SVC-Service_Line_Information" minOccurs="1"/>
+			<xsd:element name="S-REF-Service_Line_Item_Identification" type="S-REF-Service_Line_Item_Identification" minOccurs="0" nillable="true"/>
+			<xsd:element name="S-DTP-Service_Line_Date" type="S-DTP-Service_Line_Date"/>
+		</xsd:sequence>
+		<xsd:attribute name="Type" default="Loop" type="xsd:string"/>
+		<xsd:attribute name="ID" default="2210D" type="xsd:string"/>
+		<xsd:attribute name="Name" default="Service Line Information" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="S-SVC-Service_Line_Information">
+		<xsd:annotation>
+			<xsd:documentation>To supply payment and control information to a provider for a particular service</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="C-C003-Composite_Medical_Procedure_Identifier" type="C-C003-Composite_Medical_Procedure_Identifier"/>
+			<xsd:element name="E-SVC02-Monetary_Amount" type="E-SVC02-Monetary_Amount"/>
+			<xsd:element name="E-SVC03-Monetary_Amount" type="E-SVC03-Monetary_Amount" minOccurs="0" nillable="true"/>
+			<xsd:element name="E-SVC04-Product_Service_ID" type="E-SVC04-Product_Service_ID" minOccurs="0" nillable="true"/>
+			<xsd:element name="E-SVC05-Quantity" type="E-SVC05-Quantity" minOccurs="0" nillable="true"/>
+			<xsd:element name="C-C003-Composite_Medical_Procedure_Identifier_1" type="C-C003-Composite_Medical_Procedure_Identifier_1" minOccurs="0" nillable="true"/>
+			<xsd:element name="E-SVC07-Quantity" type="E-SVC07-Quantity"/>
+		</xsd:sequence>
+		<xsd:attribute name="Type" default="Segment" type="xsd:string"/>
+		<xsd:attribute name="ID" default="SVC" type="xsd:string"/>
+		<xsd:attribute name="Name" default="Service Line Information" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="C-C003-Composite_Medical_Procedure_Identifier">
+		<xsd:annotation>
+			<xsd:documentation>To identify a medical procedure by its standardized codes and applicable modifiers </xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="E-SVC01-Product_Service_ID_Qualifier" type="E-SVC01-Product_Service_ID_Qualifier"/>
+			<xsd:element name="E-SVC02-Product_Service_ID" type="E-SVC02-Product_Service_ID"/>
+			<xsd:element name="E-SVC03-Procedure_Modifier" type="E-SVC03-Procedure_Modifier" minOccurs="0" nillable="true"/>
+			<xsd:element name="E-SVC04-Procedure_Modifier" type="E-SVC04-Procedure_Modifier" minOccurs="0" nillable="true"/>
+			<xsd:element name="E-SVC05-Procedure_Modifier" type="E-SVC05-Procedure_Modifier" minOccurs="0" nillable="true"/>
+			<xsd:element name="E-SVC06-Procedure_Modifier" type="E-SVC06-Procedure_Modifier" minOccurs="0" nillable="true"/>
+			<xsd:element name="E-SVC07-Description" type="E-SVC07-Description" minOccurs="0" nillable="true"/>
+			<xsd:element name="E-SVC08-Product_Service_ID" type="E-SVC08-Product_Service_ID" minOccurs="0" nillable="true"/>
+		</xsd:sequence>
+		<xsd:attribute name="Type" default="Composite" type="xsd:string"/>
+		<xsd:attribute name="ID" default="C003" type="xsd:string"/>
+		<xsd:attribute name="Name" default="Composite Medical Procedure Identifier" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="E-SVC01-Product_Service_ID_Qualifier">
+		<xsd:annotation>
+			<xsd:documentation>Code identifying the type/source of the descriptive number used in Product/Service ID (234) </xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-String-Type">
+				<xsd:enumeration value="AD"/>
+				<xsd:enumeration value="ER"/>
+				<xsd:enumeration value="HC"/>
+				<xsd:enumeration value="HP"/>
+				<xsd:enumeration value="IV"/>
+				<xsd:enumeration value="N4"/>
+				<xsd:enumeration value="NU"/>
+				<xsd:enumeration value="WK"/>
+				<xsd:attribute name="EDIDataType" fixed="ID" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="235" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Product/Service ID Qualifier" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="E-SVC02-Product_Service_ID">
+		<xsd:annotation>
+			<xsd:documentation>Identifying number for a product or service </xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-String-Type">
+				<xsd:minLength value="1"/>
+				<xsd:maxLength value="48"/>
+				<xsd:attribute name="EDIDataType" fixed="AN" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="234" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Product/Service ID" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="E-SVC03-Procedure_Modifier">
+		<xsd:annotation>
+			<xsd:documentation>This identifies special circumstances related to the performance of the service, as defined by trading partners </xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-String-Type">
+				<xsd:minLength value="2"/>
+				<xsd:maxLength value="2"/>
+				<xsd:attribute name="EDIDataType" fixed="AN" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="1339" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Procedure Modifier" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="E-SVC04-Procedure_Modifier">
+		<xsd:annotation>
+			<xsd:documentation>This identifies special circumstances related to the performance of the service, as defined by trading partners </xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-String-Type">
+				<xsd:minLength value="2"/>
+				<xsd:maxLength value="2"/>
+				<xsd:attribute name="EDIDataType" fixed="AN" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="1339" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Procedure Modifier" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="E-SVC05-Procedure_Modifier">
+		<xsd:annotation>
+			<xsd:documentation>This identifies special circumstances related to the performance of the service, as defined by trading partners </xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-String-Type">
+				<xsd:minLength value="2"/>
+				<xsd:maxLength value="2"/>
+				<xsd:attribute name="EDIDataType" fixed="AN" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="1339" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Procedure Modifier" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="E-SVC06-Procedure_Modifier">
+		<xsd:annotation>
+			<xsd:documentation>This identifies special circumstances related to the performance of the service, as defined by trading partners </xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-String-Type">
+				<xsd:minLength value="2"/>
+				<xsd:maxLength value="2"/>
+				<xsd:attribute name="EDIDataType" fixed="AN" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="1339" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Procedure Modifier" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="E-SVC07-Description">
+		<xsd:annotation>
+			<xsd:documentation>A free-form description to clarify the related data elements and their content </xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="Type" default="Element" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="E-SVC08-Product_Service_ID">
+		<xsd:annotation>
+			<xsd:documentation>Identifying number for a product or service </xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="Type" default="Element" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="E-SVC02-Monetary_Amount">
+		<xsd:annotation>
+			<xsd:documentation>Monetary amount </xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-Decimal-Type">
+				<xsd:attribute name="EDIDataType" fixed="R" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="782" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Monetary Amount" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="E-SVC03-Monetary_Amount">
+		<xsd:annotation>
+			<xsd:documentation>Monetary amount </xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="Type" default="Element" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="E-SVC04-Product_Service_ID">
+		<xsd:annotation>
+			<xsd:documentation>Identifying number for a product or service </xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-String-Type">
+				<xsd:minLength value="1"/>
+				<xsd:maxLength value="48"/>
+				<xsd:attribute name="EDIDataType" fixed="AN" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="234" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Product/Service ID" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="E-SVC05-Quantity">
+		<xsd:annotation>
+			<xsd:documentation>Numeric value of quantity </xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="Type" default="Element" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="C-C003-Composite_Medical_Procedure_Identifier_1">
+		<xsd:annotation>
+			<xsd:documentation>To identify a medical procedure by its standardized codes and applicable modifiers </xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="E-SVC01-Product_Service_ID_Qualifier" type="E-SVC01-Product_Service_ID_Qualifier_1"/>
+			<xsd:element name="E-SVC02-Product_Service_ID" type="E-SVC02-Product_Service_ID_1"/>
+			<xsd:element name="E-SVC03-Procedure_Modifier" type="E-SVC03-Procedure_Modifier_1"/>
+			<xsd:element name="E-SVC04-Procedure_Modifier" type="E-SVC04-Procedure_Modifier_1"/>
+			<xsd:element name="E-SVC05-Procedure_Modifier" type="E-SVC05-Procedure_Modifier_1"/>
+			<xsd:element name="E-SVC06-Procedure_Modifier" type="E-SVC06-Procedure_Modifier_1"/>
+			<xsd:element name="E-SVC07-Description" type="E-SVC07-Description_1"/>
+			<xsd:element name="E-SVC08-Product_Service_ID" type="E-SVC08-Product_Service_ID_1"/>
+		</xsd:sequence>
+		<xsd:attribute name="Type" default="Composite" type="xsd:string"/>
+		<xsd:attribute name="ID" default="C003" type="xsd:string"/>
+		<xsd:attribute name="Name" default="Composite Medical Procedure Identifier" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="E-SVC01-Product_Service_ID_Qualifier_1">
+		<xsd:annotation>
+			<xsd:documentation>Code identifying the type/source of the descriptive number used in Product/Service ID (234) </xsd:documentation>
+		</xsd:annotation>
+	</xsd:complexType>
+	<xsd:complexType name="E-SVC02-Product_Service_ID_1">
+		<xsd:annotation>
+			<xsd:documentation>Identifying number for a product or service </xsd:documentation>
+		</xsd:annotation>
+	</xsd:complexType>
+	<xsd:complexType name="E-SVC03-Procedure_Modifier_1">
+		<xsd:annotation>
+			<xsd:documentation>This identifies special circumstances related to the performance of the service, as defined by trading partners </xsd:documentation>
+		</xsd:annotation>
+	</xsd:complexType>
+	<xsd:complexType name="E-SVC04-Procedure_Modifier_1">
+		<xsd:annotation>
+			<xsd:documentation>This identifies special circumstances related to the performance of the service, as defined by trading partners </xsd:documentation>
+		</xsd:annotation>
+	</xsd:complexType>
+	<xsd:complexType name="E-SVC05-Procedure_Modifier_1">
+		<xsd:annotation>
+			<xsd:documentation>This identifies special circumstances related to the performance of the service, as defined by trading partners </xsd:documentation>
+		</xsd:annotation>
+	</xsd:complexType>
+	<xsd:complexType name="E-SVC06-Procedure_Modifier_1">
+		<xsd:annotation>
+			<xsd:documentation>This identifies special circumstances related to the performance of the service, as defined by trading partners </xsd:documentation>
+		</xsd:annotation>
+	</xsd:complexType>
+	<xsd:complexType name="E-SVC07-Description_1">
+		<xsd:annotation>
+			<xsd:documentation>A free-form description to clarify the related data elements and their content </xsd:documentation>
+		</xsd:annotation>
+	</xsd:complexType>
+	<xsd:complexType name="E-SVC08-Product_Service_ID_1">
+		<xsd:annotation>
+			<xsd:documentation>Identifying number for a product or service </xsd:documentation>
+		</xsd:annotation>
+	</xsd:complexType>
+	<xsd:complexType name="E-SVC07-Quantity">
+		<xsd:annotation>
+			<xsd:documentation>Numeric value of quantity </xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-Decimal-Type">
+				<xsd:attribute name="EDIDataType" fixed="R" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="380" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Quantity" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="S-REF-Service_Line_Item_Identification">
+		<xsd:annotation>
+			<xsd:documentation>To specify identifying information</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="E-REF01-Reference_Identification_Qualifier" type="E-REF01-Reference_Identification_Qualifier_8"/>
+			<xsd:element name="E-REF02-Reference_Identification" type="E-REF02-Reference_Identification"/>
+			<xsd:element name="E-REF03-Description" type="E-REF03-Description" minOccurs="0" nillable="true"/>
+			<xsd:element name="C-C040-Reference_Identifier" type="C-C040-Reference_Identifier" minOccurs="0" nillable="true"/>
+		</xsd:sequence>
+		<xsd:attribute name="Type" default="Segment" type="xsd:string"/>
+		<xsd:attribute name="ID" default="REF" type="xsd:string"/>
+		<xsd:attribute name="Name" default="Service Line Item Identification" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="E-REF01-Reference_Identification_Qualifier_8">
+		<xsd:annotation>
+			<xsd:documentation>Code qualifying the Reference Identification </xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-String-Type">
+				<xsd:enumeration value="FJ"/>
+				<xsd:attribute name="EDIDataType" fixed="ID" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="128" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Reference Identification Qualifier" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="S-DTP-Service_Line_Date">
+		<xsd:annotation>
+			<xsd:documentation>To specify any or all of a date, a time, or a time period</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="E-DTP01-Date_Time_Qualifier" type="E-DTP01-Date_Time_Qualifier"/>
+			<xsd:element name="E-DTP02-Date_Time_Period_Format_Qualifier" type="E-DTP02-Date_Time_Period_Format_Qualifier"/>
+			<xsd:element name="E-DTP03-Date_Time_Period" type="E-DTP03-Date_Time_Period"/>
+		</xsd:sequence>
+		<xsd:attribute name="Type" default="Segment" type="xsd:string"/>
+		<xsd:attribute name="ID" default="DTP" type="xsd:string"/>
+		<xsd:attribute name="Name" default="Service Line Date" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="L-2000E">
+		<xsd:annotation>
+			<xsd:documentation>To identify dependencies among and the content of hierarchically related groups of data segments</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="S-HL-Dependent_Level" type="S-HL-Dependent_Level" minOccurs="1"/>
+			<xsd:element name="S-DMG-Dependent_Demographic_Information" type="S-DMG-Dependent_Demographic_Information"/>
+			<xsd:element name="L-2100E" type="L-2100E"/>
+			<xsd:element name="L-2200E" type="L-2200E" maxOccurs="unbounded"/>
+		</xsd:sequence>
+		<xsd:attribute name="Type" default="Loop" type="xsd:string"/>
+		<xsd:attribute name="ID" default="2000E" type="xsd:string"/>
+		<xsd:attribute name="Name" default="Dependent Level" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="S-HL-Dependent_Level">
+		<xsd:annotation>
+			<xsd:documentation>To identify dependencies among and the content of hierarchically related groups of data segments</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="E-HL01-Hierarchical_ID_Number" type="E-HL01-Hierarchical_ID_Number"/>
+			<xsd:element name="E-HL02-Hierarchical_Parent_ID_Number" type="E-HL02-Hierarchical_Parent_ID_Number_1"/>
+			<xsd:element name="E-HL03-Hierarchical_Level_Code" type="E-HL03-Hierarchical_Level_Code_4"/>
+			<xsd:element name="E-HL04-Hierarchical_Child_Code" type="E-HL04-Hierarchical_Child_Code_2" minOccurs="0" nillable="true"/>
+		</xsd:sequence>
+		<xsd:attribute name="Type" default="Segment" type="xsd:string"/>
+		<xsd:attribute name="ID" default="HL" type="xsd:string"/>
+		<xsd:attribute name="Name" default="Dependent Level" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="E-HL03-Hierarchical_Level_Code_4">
+		<xsd:annotation>
+			<xsd:documentation>Code defining the characteristic of a level in a hierarchical structure </xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-String-Type">
+				<xsd:enumeration value="23"/>
+				<xsd:attribute name="EDIDataType" fixed="ID" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="735" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Hierarchical Level Code" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="E-HL04-Hierarchical_Child_Code_2">
+		<xsd:annotation>
+			<xsd:documentation>Code indicating if there are hierarchical child data segments subordinate to the level being described </xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="Type" default="Element" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="S-DMG-Dependent_Demographic_Information">
+		<xsd:annotation>
+			<xsd:documentation>To supply demographic information</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="E-DMG01-Date_Time_Period_Format_Qualifier" type="E-DMG01-Date_Time_Period_Format_Qualifier"/>
+			<xsd:element name="E-DMG02-Date_Time_Period" type="E-DMG02-Date_Time_Period"/>
+			<xsd:element name="E-DMG03-Gender_Code" type="E-DMG03-Gender_Code" minOccurs="0" nillable="true"/>
+			<xsd:element name="E-DMG04-Marital_Status_Code" type="E-DMG04-Marital_Status_Code" minOccurs="0" nillable="true"/>
+			<xsd:element name="C-C056-Composite_Race_or_Ethnicity_Information" type="C-C056-Composite_Race_or_Ethnicity_Information" minOccurs="0" maxOccurs="10" nillable="true"/>
+			<xsd:element name="E-DMG06-Citizenship_Status_Code" type="E-DMG06-Citizenship_Status_Code" minOccurs="0" nillable="true"/>
+			<xsd:element name="E-DMG07-Country_Code" type="E-DMG07-Country_Code" minOccurs="0" nillable="true"/>
+			<xsd:element name="E-DMG08-Basis_of_Verification_Code" type="E-DMG08-Basis_of_Verification_Code" minOccurs="0" nillable="true"/>
+			<xsd:element name="E-DMG09-Quantity" type="E-DMG09-Quantity" minOccurs="0" nillable="true"/>
+			<xsd:element name="E-DMG10-Code_List_Qualifier_Code" type="E-DMG10-Code_List_Qualifier_Code" minOccurs="0" nillable="true"/>
+			<xsd:element name="E-DMG11-Industry_Code" type="E-DMG11-Industry_Code" minOccurs="0" nillable="true"/>
+		</xsd:sequence>
+		<xsd:attribute name="Type" default="Segment" type="xsd:string"/>
+		<xsd:attribute name="ID" default="DMG" type="xsd:string"/>
+		<xsd:attribute name="Name" default="Dependent Demographic Information" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="L-2100E">
+		<xsd:annotation>
+			<xsd:documentation>To supply the full name of an individual or organizational entity</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="S-NM1-Dependent_Name" type="S-NM1-Dependent_Name" minOccurs="1"/>
+		</xsd:sequence>
+		<xsd:attribute name="Type" default="Loop" type="xsd:string"/>
+		<xsd:attribute name="ID" default="2100E" type="xsd:string"/>
+		<xsd:attribute name="Name" default="Dependent Name" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="S-NM1-Dependent_Name">
+		<xsd:annotation>
+			<xsd:documentation>To supply the full name of an individual or organizational entity</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="E-NM101-Entity_Identifier_Code" type="E-NM101-Entity_Identifier_Code_4"/>
+			<xsd:element name="E-NM102-Entity_Type_Qualifier" type="E-NM102-Entity_Type_Qualifier_2"/>
+			<xsd:element name="E-NM103-Name_Last_or_Organization_Name" type="E-NM103-Name_Last_or_Organization_Name"/>
+			<xsd:element name="E-NM104-Name_First" type="E-NM104-Name_First_1" minOccurs="0" nillable="true"/>
+			<xsd:element name="E-NM105-Name_Middle" type="E-NM105-Name_Middle_1" minOccurs="0" nillable="true"/>
+			<xsd:element name="E-NM106-Name_Prefix" type="E-NM106-Name_Prefix" minOccurs="0" nillable="true"/>
+			<xsd:element name="E-NM107-Name_Suffix" type="E-NM107-Name_Suffix_1" minOccurs="0" nillable="true"/>
+			<xsd:element name="E-NM108-Identification_Code_Qualifier" type="E-NM108-Identification_Code_Qualifier_4" minOccurs="0" nillable="true"/>
+			<xsd:element name="E-NM109-Identification_Code" type="E-NM109-Identification_Code_1" minOccurs="0" nillable="true"/>
+			<xsd:element name="E-NM110-Entity_Relationship_Code" type="E-NM110-Entity_Relationship_Code" minOccurs="0" nillable="true"/>
+			<xsd:element name="E-NM111-Entity_Identifier_Code" type="E-NM111-Entity_Identifier_Code" minOccurs="0" nillable="true"/>
+			<xsd:element name="E-NM112-Name_Last_or_Organization_Name" type="E-NM112-Name_Last_or_Organization_Name" minOccurs="0" nillable="true"/>
+		</xsd:sequence>
+		<xsd:attribute name="Type" default="Segment" type="xsd:string"/>
+		<xsd:attribute name="ID" default="NM1" type="xsd:string"/>
+		<xsd:attribute name="Name" default="Dependent Name" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="E-NM101-Entity_Identifier_Code_4">
+		<xsd:annotation>
+			<xsd:documentation>Code identifying an organizational entity, a physical location, property or an individual </xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-String-Type">
+				<xsd:enumeration value="QC"/>
+				<xsd:attribute name="EDIDataType" fixed="ID" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="98" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Entity Identifier Code" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="E-NM102-Entity_Type_Qualifier_2">
+		<xsd:annotation>
+			<xsd:documentation>Code qualifying the type of entity </xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-String-Type">
+				<xsd:enumeration value="1"/>
+				<xsd:attribute name="EDIDataType" fixed="ID" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="1065" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Entity Type Qualifier" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="E-NM108-Identification_Code_Qualifier_4">
+		<xsd:annotation>
+			<xsd:documentation>Code designating the system/method of code structure used for Identification Code (67) </xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="Type" default="Element" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="E-NM109-Identification_Code_1">
+		<xsd:annotation>
+			<xsd:documentation>Code identifying a party or other code </xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="Type" default="Element" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="L-2200E">
+		<xsd:annotation>
+			<xsd:documentation>To uniquely identify a transaction to an application</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="S-TRN-Claim_Status_Tracking_Number" type="S-TRN-Claim_Status_Tracking_Number" minOccurs="1"/>
+			<xsd:choice maxOccurs="7" minOccurs="0">
+				<xsd:element name="S-REF-Payer_Claim_Control_Number" type="S-REF-Payer_Claim_Control_Number" minOccurs="0" nillable="true"/>
+				<xsd:element name="S-REF-Institutional_Bill_Type_Identification" type="S-REF-Institutional_Bill_Type_Identification" minOccurs="0" nillable="true"/>
+				<xsd:element name="S-REF-Application_or_Location_System_Identifier" type="S-REF-Application_or_Location_System_Identifier" minOccurs="0" nillable="true"/>
+				<xsd:element name="S-REF-Group_Number" type="S-REF-Group_Number" minOccurs="0" nillable="true"/>
+				<xsd:element name="S-REF-Patient_Control_Number" type="S-REF-Patient_Control_Number" minOccurs="0" nillable="true"/>
+				<xsd:element name="S-REF-Pharmacy_Prescription_Number" type="S-REF-Pharmacy_Prescription_Number" minOccurs="0" nillable="true"/>
+				<xsd:element name="S-REF-Claim_Identification_Number_For_Clearinghouses_and_Other_Transmission_Intermediaries" type="S-REF-Claim_Identification_Number_For_Clearinghouses_and_Other_Transmission_Intermediaries" minOccurs="0" nillable="true"/>
+			</xsd:choice>
+			<xsd:element name="S-AMT-Claim_Submitted_Charges" type="S-AMT-Claim_Submitted_Charges" minOccurs="0" nillable="true"/>
+			<xsd:element name="S-DTP-Claim_Service_Date" type="S-DTP-Claim_Service_Date" minOccurs="0" nillable="true"/>
+			<xsd:element name="L-2210E" type="L-2210E" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+		</xsd:sequence>
+		<xsd:attribute name="Type" default="Loop" type="xsd:string"/>
+		<xsd:attribute name="ID" default="2200E" type="xsd:string"/>
+		<xsd:attribute name="Name" default="Claim Status Tracking Number" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="L-2210E">
+		<xsd:annotation>
+			<xsd:documentation>To supply payment and control information to a provider for a particular service</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="S-SVC-Service_Line_Information" type="S-SVC-Service_Line_Information" minOccurs="1"/>
+			<xsd:element name="S-REF-Service_Line_Item_Identification" type="S-REF-Service_Line_Item_Identification" minOccurs="0" nillable="true"/>
+			<xsd:element name="S-DTP-Service_Line_Date" type="S-DTP-Service_Line_Date"/>
+		</xsd:sequence>
+		<xsd:attribute name="Type" default="Loop" type="xsd:string"/>
+		<xsd:attribute name="ID" default="2210E" type="xsd:string"/>
+		<xsd:attribute name="Name" default="Service Line Information" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="S-SE-Transaction_Set_Trailer">
+		<xsd:annotation>
+			<xsd:documentation>To indicate the end of the transaction set and provide the count of the transmitted segments (including the beginning (ST) and ending (SE) segments)</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="E-SE01-Number_of_Included_Segments" type="E-SE01-Number_of_Included_Segments"/>
+			<xsd:element name="E-SE02-Transaction_Set_Control_Number" type="E-SE02-Transaction_Set_Control_Number"/>
+		</xsd:sequence>
+		<xsd:attribute name="Type" default="Segment" type="xsd:string"/>
+		<xsd:attribute name="ID" default="SE" type="xsd:string"/>
+		<xsd:attribute name="Name" default="Transaction Set Trailer" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="E-SE01-Number_of_Included_Segments">
+		<xsd:annotation>
+			<xsd:documentation>Total number of segments included in a transaction set including ST and SE segments </xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-String-Type">
+				<xsd:attribute name="EDIDataType" fixed="N0" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="96" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Number of Included Segments" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="E-SE02-Transaction_Set_Control_Number">
+		<xsd:annotation>
+			<xsd:documentation>Identifying control number that must be unique within the transaction set functional group assigned by the originator for a transaction set </xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-String-Type">
+				<xsd:attribute name="EDIDataType" fixed="AN" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="329" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Transaction Set Control Number" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="S-GE-Functional_Group_Trailer">
+		<xsd:annotation>
+			<xsd:documentation>To indicate the end of a functional group and to provide control information</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="E-GE01-Number_of_Transaction_Sets_Included" type="E-GE01-Number_of_Transaction_Sets_Included"/>
+			<xsd:element name="E-GE02-Group_Control_Number" type="E-GE02-Group_Control_Number"/>
+		</xsd:sequence>
+		<xsd:attribute name="Type" default="Segment" type="xsd:string"/>
+		<xsd:attribute name="ID" default="GE" type="xsd:string"/>
+		<xsd:attribute name="Name" default="Functional Group Trailer" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="E-GE01-Number_of_Transaction_Sets_Included">
+		<xsd:annotation>
+			<xsd:documentation>Total number of transaction sets included in the functional group or interchange (transmission) group terminated by the trailer containing this data element</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-Integer-Type">
+				<xsd:attribute name="EDIDataType" fixed="N0" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="97" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Number of Transaction Sets Included" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="E-GE02-Group_Control_Number">
+		<xsd:annotation>
+			<xsd:documentation>Assigned number originated and maintained by the sender</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-Integer-Type">
+				<xsd:attribute name="EDIDataType" fixed="N0" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="28" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Group Control Number" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="S-IEA-Interchange_Control_Trailer">
+		<xsd:annotation>
+			<xsd:documentation>To define the end of an interchange of zero or more functional groups and interchange-related control segments</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="E-IEA01-Number_of_Included_Functional_Groups" type="E-IEA01-Number_of_Included_Functional_Groups"/>
+			<xsd:element name="E-IEA02-Interchange_Control_Number" type="E-IEA02-Interchange_Control_Number"/>
+		</xsd:sequence>
+		<xsd:attribute name="Type" default="Segment" type="xsd:string"/>
+		<xsd:attribute name="ID" default="IEA" type="xsd:string"/>
+		<xsd:attribute name="Name" default="Interchange Control Trailer" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="E-IEA01-Number_of_Included_Functional_Groups">
+		<xsd:annotation>
+			<xsd:documentation>A count of the number of functional groups included in an interchange</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-Integer-Type">
+				<xsd:attribute name="EDIDataType" fixed="N0" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="I16" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Number of Included Functional Groups" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="E-IEA02-Interchange_Control_Number">
+		<xsd:annotation>
+			<xsd:documentation>A control number assigned by the interchange sender</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="EDI-Element-Integer-Type">
+				<xsd:attribute name="EDIDataType" fixed="N0" type="xsd:string"/>
+				<xsd:attribute name="ID" fixed="I12" type="xsd:string"/>
+				<xsd:attribute name="Name" fixed="Interchange Control Number" type="xsd:string"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+</xsd:schema>
